@@ -1,0 +1,167 @@
+
+    html, body{background:rgb(50,50,50);color:white;width:100%;height:100%;padding: 0px;margin: 0px;}
+    main{height: 100%;}
+    header{height: 400px;}
+    section article{
+        width: 300px;
+        height:150px;
+        float: left;
+        border: 0px solid white;
+        position:relative;
+        margin:5px;
+        transform: :scale(1,1);
+        z-index: 1;
+        transition: all 1s;
+    }
+    section article img{
+        width: 100%;
+        position: absolute;
+        top:0px;
+        left:0px;
+    }
+    section article h3, section article h4, section article p{
+        position: absolute;
+    }
+    .aumentado{
+        z-index: 1000;
+        border:0px solid coral;
+        box-shadow: 0px 0px 15px 0px blue;
+        transform:scale(1.3,1.3)
+    }
+    section{
+        width: 100%;
+        height: 300px;
+
+    }
+    section .ribbon{
+        width: 4000px;
+        position: relative;
+        left: 0px;
+        transition: all 1s;
+    }
+    .botonredondo{
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        background: rgb(220,220,220);
+        color:rgb(50,50,50);
+        font-size: 30px;
+        text-align: center;
+        line-height: 30px;
+        font-weight: bold;
+        position: absolute;
+
+    }
+    .botones{
+        width: 100%;
+        position: absolute;
+        z-index: 1000;
+    }
+    .anterior{
+        top:100px;
+        transform: rotate(180deg)
+    }
+    .posterior{
+        right:0px;
+        top: 100px;
+    }
+
+/*///////////////////// Fin PASAFOTOS ///////////////////*///////
+
+/*//////////////////////////Destacado/////////////////*/////////////////
+
+#destacado{
+    
+    position: absolute;
+    width: :40%;
+    right: 0px;
+    
+    top: 0px;
+    height: 400px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px 20px black inset;
+}
+
+#destacado img{
+    width: 80%;
+    opacity: 0.5;
+}
+
+#destacado h2, #destacado h3, #destacado p{
+    position: absolute;
+    top:0px;
+}
+
+.detalles{
+    width: 100%;
+    height: 400px;
+    background: rgb(40,40,40);
+    box-shadow: 0px 0px 30px 0px black inset;
+    overflow: hidden;
+    transition: all 1s;
+    position: relative;
+    
+}
+.abierto{
+    height: 300px;
+}
+.muyabierto{
+    height: 500px;
+}
+.detalles h2,.detalles h3,.detalles p,.detalles button{
+    position: absolute;
+    
+}
+.detalles h2{
+    top: 20px;
+    left: 20px;
+}
+.detalles h3{
+    top:50px;
+    left: 20px;
+}
+.detalles p{
+    top:80px;
+    left: 20px;
+}
+
+.detalles button{
+    bottom:20px;
+    left: 20px;
+}
+.detalles img{width: 100%;opacity: 0.5;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

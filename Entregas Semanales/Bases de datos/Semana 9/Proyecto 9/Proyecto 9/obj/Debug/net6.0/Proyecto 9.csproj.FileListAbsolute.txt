@@ -1,0 +1,15 @@
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\obj\Debug\net6.0\Proyecto 9.csproj.AssemblyReference.cache
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\obj\Debug\net6.0\Proyecto 9.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\obj\Debug\net6.0\Proyecto 9.AssemblyInfoInputs.cache
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\obj\Debug\net6.0\Proyecto 9.AssemblyInfo.cs
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\obj\Debug\net6.0\Proyecto 9.csproj.CoreCompileInputs.cache
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\bin\Debug\net6.0\Proyecto 9.exe
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\bin\Debug\net6.0\Proyecto 9.deps.json
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\bin\Debug\net6.0\Proyecto 9.runtimeconfig.json
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\bin\Debug\net6.0\Proyecto 9.dll
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\bin\Debug\net6.0\Proyecto 9.pdb
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\obj\Debug\net6.0\Proyecto 9.dll
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\obj\Debug\net6.0\refint\Proyecto 9.dll
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\obj\Debug\net6.0\Proyecto 9.pdb
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\obj\Debug\net6.0\Proyecto 9.genruntimeconfig.cache
+C:\Users\fran\Desktop\Practicas C#\Proyecto 9\Proyecto 9\obj\Debug\net6.0\ref\Proyecto 9.dll

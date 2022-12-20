@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<articulos>
+    
+    <articulo categoria = "programacion">
+        <titulo>Titulo</titulo>
+        <subtitulo>descripcion</subtitulo>
+        <descripcion>Otra descripcion mas</descripcion>
+        <imagen>img/curso.jpg</imagen>
+    </articulo>
+    
+    <articulo categoria= "diseño">
+        <titulo>Titulo</titulo>
+        <subtitulo>descripcion</subtitulo>
+        <descripcion>Otra descripcion mas</descripcion>
+        <imagen>img/curso.jpg</imagen>
+    </articulo>
+    
+    <articulo categoria = "otro atributo">
+        <titulo>Titulo</titulo>
+        <subtitulo>descripcion</subtitulo>
+        <descripcion>Otra descripcion mas</descripcion>
+        <imagen>img/curso.jpg</imagen>
+    </articulo>
+    
+    <articulo categoria = "otro mas">
+        <titulo>Titulo</titulo>
+        <subtitulo>descripcion</subtitulo>
+        <descripcion>Otra descripcion mas</descripcion>
+        <imagen>img/curso.jpg</imagen>
+    </articulo>
+    
+    
+    
+</articulos>

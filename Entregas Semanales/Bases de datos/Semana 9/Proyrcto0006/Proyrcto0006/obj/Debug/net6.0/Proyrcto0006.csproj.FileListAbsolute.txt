@@ -1,0 +1,15 @@
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\bin\Debug\net6.0\Proyrcto0006.exe
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\bin\Debug\net6.0\Proyrcto0006.deps.json
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\bin\Debug\net6.0\Proyrcto0006.runtimeconfig.json
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\bin\Debug\net6.0\Proyrcto0006.dll
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\bin\Debug\net6.0\Proyrcto0006.pdb
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\obj\Debug\net6.0\Proyrcto0006.csproj.AssemblyReference.cache
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\obj\Debug\net6.0\Proyrcto0006.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\obj\Debug\net6.0\Proyrcto0006.AssemblyInfoInputs.cache
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\obj\Debug\net6.0\Proyrcto0006.AssemblyInfo.cs
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\obj\Debug\net6.0\Proyrcto0006.csproj.CoreCompileInputs.cache
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\obj\Debug\net6.0\Proyrcto0006.dll
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\obj\Debug\net6.0\refint\Proyrcto0006.dll
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\obj\Debug\net6.0\Proyrcto0006.pdb
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\obj\Debug\net6.0\Proyrcto0006.genruntimeconfig.cache
+C:\Users\fran\Desktop\Practicas C#\Proyrcto0006\Proyrcto0006\obj\Debug\net6.0\ref\Proyrcto0006.dll

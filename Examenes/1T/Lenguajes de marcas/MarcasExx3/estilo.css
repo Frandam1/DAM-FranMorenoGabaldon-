@@ -1,0 +1,152 @@
+.container{ /*IMAGEN DE FONDO*/
+    width: 100%;
+    height: 100%;
+    background-image: url(img/background.png);
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%; /* Da margenes */
+    box-sizing: border-box;/* Encuadra la iamgen del fondo*/
+    
+    
+}
+
+.navbar{/*Forma y alineaciojn de la nav*/
+    
+    height: 13%;
+    display: flex;
+    align-items: center;
+    background-color: ;
+}
+
+.logo{
+    
+    width: 30px;        /* ancho */
+    cursor: pointer;    /* hace que sea clickable*/
+}
+
+.menu-icon{
+    
+    width: 30px;
+    cursor: pointer;
+    margin-left:30px; /* margen a ala izquierda del boton*/
+    
+}
+nav{/*Afecta al espacio  en general*/
+    flex: 1; /*para repartir espacio de forma igualitaria*/
+    text-align: right;/*Alineacion del texto*/
+}
+
+nav ul li{/*Afecta a la lista en si*/
+    list-style: none;
+    display: inline-block;/*Para que la lista se vea horizontal*/
+    margin-left: 50px;
+}
+
+nav ul li a{/*Afecta a los elementeos de la lista*/
+    text-decoration: none;
+    color:greenyellow;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.row{
+    display: flex;
+    height: 88%;
+    align-items:center;
+    
+}
+
+.col{
+    flex-basis: 50%;
+}
+
+h1{ /* NO s epone punto aqui*/
+    color: #fff;
+    font-size: 90px;
+}
+
+p{
+    color: #fff;
+    font-size: 23px;
+    line-height: 15px;
+    
+    
+}
+button{
+    width: 150px;
+    color:limegreen;
+    font-size: 15px;
+    padding: 12px 0;
+    background-color: darkmagenta;
+    border=0;
+    border-radius: 20px;/*redondea el boton*/
+    outline: none;
+    margin-top: 30px;
+    
+}
+
+.card{
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    border-radius: 15px;
+    padding: 15px 25px;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-image: url(img/pic-1.png);
+    background-position: left;
+    background-size: cover;
+    transition: transform 0.5s; /* Esto es afectado por el hover*/
+    
+    
+}
+
+.card1{
+    background-image: url(img/pic-1.png);
+}
+.card2{
+    background-image: url(img/pic-2.png);
+}
+.card3{
+    background-image: url(img/pic-3.png);
+}
+.card4{
+    background-image: url(img/pic-4.png);
+}
+
+.card:hover{
+    transform: translateY(-10px);/* Resalta la carta, el - es arriba*/
+}
+
+h5{
+    color: azure;
+    text-shadow: 0 0 5px #999;
+}
+.card p{
+    text-shadow: 0 0 15px #000;
+    font-size: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

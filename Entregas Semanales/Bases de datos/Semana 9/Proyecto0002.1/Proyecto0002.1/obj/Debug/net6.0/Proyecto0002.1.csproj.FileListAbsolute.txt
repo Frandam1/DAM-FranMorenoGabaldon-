@@ -1,0 +1,15 @@
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\bin\Debug\net6.0\Proyecto0002.1.exe
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\bin\Debug\net6.0\Proyecto0002.1.deps.json
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\bin\Debug\net6.0\Proyecto0002.1.runtimeconfig.json
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\bin\Debug\net6.0\Proyecto0002.1.dll
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\bin\Debug\net6.0\Proyecto0002.1.pdb
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\obj\Debug\net6.0\Proyecto0002.1.csproj.AssemblyReference.cache
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\obj\Debug\net6.0\Proyecto0002.1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\obj\Debug\net6.0\Proyecto0002.1.AssemblyInfoInputs.cache
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\obj\Debug\net6.0\Proyecto0002.1.AssemblyInfo.cs
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\obj\Debug\net6.0\Proyecto0002.1.csproj.CoreCompileInputs.cache
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\obj\Debug\net6.0\Proyecto0002.1.dll
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\obj\Debug\net6.0\refint\Proyecto0002.1.dll
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\obj\Debug\net6.0\Proyecto0002.1.pdb
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\obj\Debug\net6.0\Proyecto0002.1.genruntimeconfig.cache
+C:\Users\fran\Desktop\Practicas C#\Proyecto0002.1\Proyecto0002.1\obj\Debug\net6.0\ref\Proyecto0002.1.dll

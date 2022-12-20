@@ -1,0 +1,37 @@
+<html>
+    <head>
+    
+    </head>
+    <body>
+        <article>
+            <div id ="contenido">
+                <h3 id ="tituloh3">.</h3>
+                <h4 id ="tituloh4">.</h4>
+                <p id="texto"></p>
+            
+            
+            
+            </div>
+        </article>
+        <div id="contenido"></div>
+        <script>
+            var contenido = null;
+            // XMLHttpRequest
+            var miconexion = new XMLHttpRequest();
+            miconexion.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    
+                    contenido = miconexion.responseXML
+                    
+                    console.log(contenido.getElementsByTagName("articulo")
+                    [1].getElementsByTagName("titulo").innerHTML)
+                    //titulo
+                    document.getElementById("tituloh3").innerHTML = "hola"
+                }
+            }
+            miconexion.open("GET","archivo.xml",true);
+            miconexion.send();
+        
+        </script>
+    </body>
+</html>
