@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <!-- Este es un comentario -->
+        <!-- Indicamos al navegador como adaptar la web para dispositivos moviles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Enlazamos CSS-->
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    
+    <body>
+        <!-- Division generica, y otra especifica -->
+        <div class="header">
+            <div class="top-nav">
+            <!-- Navegacion comun a toda la web -->
+                <ul>
+                    
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="adopta.html">Adopta</a></li>
+                    <li><a href="donar.html">Colabora</a></li>
+                    <li><a href="carrito.html">Merchand</a></li>
+                    <li><a href="normas.html">Recursos</a></li>
+                    
+                </ul>
+                <button>Registrate!</button>
+            
+            </div>
+            <!-- Division para la parte izquierda, detalle -->
+            <div class="side-nav">
+                <img src="img/logogitpet.png" class="logo">
+                <a href="###">INICIO</a>
+            
+            
+            </div>
+            <h1 class="h1donar">Aqui puedes realizar donaciones</h1>
+            <p class="pdonar">Muchas Gracias!</p>
+            <!-- formulario para insertar info en la BBDD, metodo POST -->
+            <form action="insertodonacion.php" method="POST">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre"><br>
+                <label for="apellidos">Apellidos:</label><br>
+                <input type="text" id="apellidos" name="apellidos"><br>
+                <label for="email">Correo:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="telefono">Telefono:</label><br>
+                <input type="tel" id="telefono" name="telefono"><br>
+                <label for="cantidad">Cantidad de la donacion:</label><br>
+                <input type="number" id="cantidad" name="cantidad"><br>
+                <button type="submit">DONAR</button>
+            </form> 
+            <footer>
+    
+                <p>Fran Moreno 1DAM</p> 
+    
+            </footer>
+    
+            
+        
+        
+        </div>
+      
+        
+         
+        
+    </body>
+      
+
+</html>

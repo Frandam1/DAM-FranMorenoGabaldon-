@@ -1,0 +1,362 @@
+/* Comentario */
+/* Elegimos todos los elemetos(*), evitando espacios blancos y asignamos fuente
++ fuente de respaldo*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+/* Fondo Web */
+.header-index{
+    width: 100%;
+    height: 100vh;
+    background: #000942;
+    padding-left: 11%;
+    padding-right: 8%;
+    position: relative;
+    
+    background-image: url(img/fondo2.jpeg);
+    background-size: 35%;
+    
+    background-repeat: no-repeat;
+    background-position: 99% 89%;
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background: #000942;
+    padding-left: 11%;
+    padding-right: 8%;
+    position: relative;
+    
+   
+}
+/* Barra Navegacion */
+.top-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0 15px;
+    border-bottom: 1px solid #bababa;
+    
+}
+.top-nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.top-nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+}
+.top-nav button{
+    background: #e91e63;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.top-nav ul li:hover{
+    
+    background: #0E75E4;
+    color: beige;
+    border-radius: 30px;
+    background-size: 100px;
+}
+/* Barra Lateral */
+.side-nav{
+    position: fixed;
+    background: #e91e63;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+    background: linear-gradient(#00bcd4, #e91e63, #3f51b5; #00bcd4);
+    background-size: 100% 500%;
+    background-position: 0 40%;
+}
+/*//////////////////////// TEXTOS///////////////////////////*/
+.h1index{
+    font-size: 55px;
+    margin-top: 30px;
+    color: aliceblue;
+    
+}
+.h2index{
+    font-size: 16px;
+    color: aliceblue;
+}
+.pindex{
+    
+    margin-top: 200px;
+    color: aliceblue;
+    
+}
+.h1donar{
+    font-size: 55px;
+    margin-top: 30px;
+    color: aliceblue;
+}
+.pdonar{
+    position: absolute;
+    margin-top: 62px;
+    color: aliceblue;
+    font-size: 25px;
+}
+.h1merchand{
+    font-size: 55px;
+    margin-top: 30px;
+    color: aliceblue;
+}
+.pmerchand{
+    position: absolute;
+    margin-top: 62px;
+    color: aliceblue;
+    font-size: 25px;
+}
+form input[type="submit"] {
+    position: absolute;
+    margin-top: 89px;
+    height: 60px;
+    width: 300px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 22px 32px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+/*///////////FORMULARIO DONAR /////////////////*/
+
+form {
+    position: absolute;
+  display: block;
+  flex-direction:row;
+  width: 300px;
+  margin-left: 10px;
+    margin-top: 100px;
+    
+    
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+    color: aliceblue;
+    
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+/*//////////////////////// ICONOS REDES SOCIALES ///////////////////////////*/
+.redessociales{
+    display: flex;
+    margin-top: 30px;
+}
+.iconos{
+    display: flex;
+    margin-bottom: 30px;
+}
+.icon{
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.icon img{
+    width: 28px;
+}
+.icon a{
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff1616;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+.icon a:hover{
+    opacity: 1;
+}
+/* Animacion Barra Lateral */
+.side-nav:hover{
+    animation: backcolor 20s linear infinite reverse;
+}
+
+@keyframes backcolor {
+    0%{
+        background-position: 0 0%;
+    }
+    100%{
+        background-position: 0 400%;
+    }
+}
+/* Elementos Side nav */
+.side-nav .logo{
+    width: 75px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.side-nav a{
+    text-decoration: none;
+    color: #fff;
+    transform: rotate(-90deg) translateX(50%);
+    width: max-content;
+    font-size: 25px;
+}
+/* Estilo footer */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: antiquewhite;
+    font-size: 10px;
+}
+/*//////////////////////// Cards ADOPTA ///////////////////////////*/
+.card {
+    text-decoration: none;
+    width: 300px;
+    height: 350px;
+    display: inline-block;
+    border-radius: 15px;
+    padding: 15px 25px;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-image: url();
+    background-position: left;
+    background-size: cover;
+    transition: transform 0.5s; /* Esto es afectado por el hover*/
+    background-color: gray;
+    border: 1px solid gray;
+    margin: 0 10px; /* Agrega un espacio de 10 píxeles a la izquierda y derecha de cada card */
+}
+.cards-container{
+    
+    display: flex;
+    text-decoration: none;
+    margin-top: 250px;
+    
+  
+}
+.card:hover{
+    transform: translateY(-10px);/* Resalta la carta, el - es arriba*/
+}
+.card1{
+    background-image: url(img/bulldog.jpg);
+}
+.card2{
+    background-image: url(img/michi.png);
+}
+.card3{
+    background-image: url(img/cachorro2.png);
+}
+.card4{
+    background-image: url(img/conejo.png);
+}
+.card1 a{
+    text-decoration: none;
+    
+}
+.card2 a{
+    text-decoration: none;
+}
+.card3 a{
+    text-decoration: none;
+}
+.card4 a{
+    text-decoration: none;
+}
+.card1 p{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.card2 p{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.card3 p{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.card4 p{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.h1adopta{
+    position: absolute;
+    color: aliceblue;
+    margin-top: 50px;
+    font-size: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
