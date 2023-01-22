@@ -1,0 +1,17 @@
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\bin\Debug\net6.0-windows\BBDD11Winforms2.exe
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\bin\Debug\net6.0-windows\BBDD11Winforms2.deps.json
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\bin\Debug\net6.0-windows\BBDD11Winforms2.runtimeconfig.json
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\bin\Debug\net6.0-windows\BBDD11Winforms2.dll
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\bin\Debug\net6.0-windows\BBDD11Winforms2.pdb
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\obj\Debug\net6.0-windows\BBDD11Winforms2.csproj.AssemblyReference.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\obj\Debug\net6.0-windows\BBDD11Winforms2.Form1.resources
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\obj\Debug\net6.0-windows\BBDD11Winforms2.csproj.GenerateResource.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\obj\Debug\net6.0-windows\BBDD11Winforms2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\obj\Debug\net6.0-windows\BBDD11Winforms2.AssemblyInfoInputs.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\obj\Debug\net6.0-windows\BBDD11Winforms2.AssemblyInfo.cs
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\obj\Debug\net6.0-windows\BBDD11Winforms2.csproj.CoreCompileInputs.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\obj\Debug\net6.0-windows\BBDD11Winforms2.dll
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\obj\Debug\net6.0-windows\refint\BBDD11Winforms2.dll
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\obj\Debug\net6.0-windows\BBDD11Winforms2.pdb
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\obj\Debug\net6.0-windows\BBDD11Winforms2.genruntimeconfig.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD11Winforms2\BBDD11Winforms2\obj\Debug\net6.0-windows\ref\BBDD11Winforms2.dll

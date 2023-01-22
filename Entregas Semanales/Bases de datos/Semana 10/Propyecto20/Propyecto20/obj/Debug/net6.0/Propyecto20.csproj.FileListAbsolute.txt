@@ -1,0 +1,15 @@
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\bin\Debug\net6.0\Propyecto20.exe
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\bin\Debug\net6.0\Propyecto20.deps.json
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\bin\Debug\net6.0\Propyecto20.runtimeconfig.json
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\bin\Debug\net6.0\Propyecto20.dll
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\bin\Debug\net6.0\Propyecto20.pdb
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\obj\Debug\net6.0\Propyecto20.csproj.AssemblyReference.cache
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\obj\Debug\net6.0\Propyecto20.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\obj\Debug\net6.0\Propyecto20.AssemblyInfoInputs.cache
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\obj\Debug\net6.0\Propyecto20.AssemblyInfo.cs
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\obj\Debug\net6.0\Propyecto20.csproj.CoreCompileInputs.cache
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\obj\Debug\net6.0\Propyecto20.dll
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\obj\Debug\net6.0\refint\Propyecto20.dll
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\obj\Debug\net6.0\Propyecto20.pdb
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\obj\Debug\net6.0\Propyecto20.genruntimeconfig.cache
+C:\Users\fran\Desktop\Practicas C#\Propyecto20\Propyecto20\obj\Debug\net6.0\ref\Propyecto20.dll

@@ -1,0 +1,15 @@
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\bin\Debug\net6.0\crearelementosarrays.exe
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\bin\Debug\net6.0\crearelementosarrays.deps.json
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\bin\Debug\net6.0\crearelementosarrays.runtimeconfig.json
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\bin\Debug\net6.0\crearelementosarrays.dll
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\bin\Debug\net6.0\crearelementosarrays.pdb
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\obj\Debug\net6.0\crearelementosarrays.csproj.AssemblyReference.cache
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\obj\Debug\net6.0\crearelementosarrays.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\obj\Debug\net6.0\crearelementosarrays.AssemblyInfoInputs.cache
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\obj\Debug\net6.0\crearelementosarrays.AssemblyInfo.cs
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\obj\Debug\net6.0\crearelementosarrays.csproj.CoreCompileInputs.cache
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\obj\Debug\net6.0\crearelementosarrays.dll
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\obj\Debug\net6.0\refint\crearelementosarrays.dll
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\obj\Debug\net6.0\crearelementosarrays.pdb
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\obj\Debug\net6.0\crearelementosarrays.genruntimeconfig.cache
+C:\Users\fran\Desktop\Practicas C#\crearelementosarrays\crearelementosarrays\obj\Debug\net6.0\ref\crearelementosarrays.dll

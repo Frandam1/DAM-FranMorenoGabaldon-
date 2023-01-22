@@ -1,0 +1,17 @@
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\bin\Debug\net6.0-windows\BBDD12.exe
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\bin\Debug\net6.0-windows\BBDD12.deps.json
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\bin\Debug\net6.0-windows\BBDD12.runtimeconfig.json
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\bin\Debug\net6.0-windows\BBDD12.dll
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\bin\Debug\net6.0-windows\BBDD12.pdb
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\obj\Debug\net6.0-windows\BBDD12.csproj.AssemblyReference.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\obj\Debug\net6.0-windows\BBDD12.Form1.resources
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\obj\Debug\net6.0-windows\BBDD12.csproj.GenerateResource.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\obj\Debug\net6.0-windows\BBDD12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\obj\Debug\net6.0-windows\BBDD12.AssemblyInfoInputs.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\obj\Debug\net6.0-windows\BBDD12.AssemblyInfo.cs
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\obj\Debug\net6.0-windows\BBDD12.csproj.CoreCompileInputs.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\obj\Debug\net6.0-windows\BBDD12.dll
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\obj\Debug\net6.0-windows\refint\BBDD12.dll
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\obj\Debug\net6.0-windows\BBDD12.pdb
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\obj\Debug\net6.0-windows\BBDD12.genruntimeconfig.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12\BBDD12\obj\Debug\net6.0-windows\ref\BBDD12.dll

@@ -1,0 +1,17 @@
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\bin\Debug\net6.0-windows\BBDD12Leer.exe
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\bin\Debug\net6.0-windows\BBDD12Leer.deps.json
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\bin\Debug\net6.0-windows\BBDD12Leer.runtimeconfig.json
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\bin\Debug\net6.0-windows\BBDD12Leer.dll
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\bin\Debug\net6.0-windows\BBDD12Leer.pdb
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\obj\Debug\net6.0-windows\BBDD12Leer.csproj.AssemblyReference.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\obj\Debug\net6.0-windows\BBDD12Leer.Form1.resources
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\obj\Debug\net6.0-windows\BBDD12Leer.csproj.GenerateResource.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\obj\Debug\net6.0-windows\BBDD12Leer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\obj\Debug\net6.0-windows\BBDD12Leer.AssemblyInfoInputs.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\obj\Debug\net6.0-windows\BBDD12Leer.AssemblyInfo.cs
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\obj\Debug\net6.0-windows\BBDD12Leer.csproj.CoreCompileInputs.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\obj\Debug\net6.0-windows\BBDD12Leer.dll
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\obj\Debug\net6.0-windows\refint\BBDD12Leer.dll
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\obj\Debug\net6.0-windows\BBDD12Leer.pdb
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\obj\Debug\net6.0-windows\BBDD12Leer.genruntimeconfig.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12Leer\BBDD12Leer\obj\Debug\net6.0-windows\ref\BBDD12Leer.dll

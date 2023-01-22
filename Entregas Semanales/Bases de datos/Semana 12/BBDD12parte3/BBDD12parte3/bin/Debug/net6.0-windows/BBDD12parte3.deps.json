@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "BBDD12parte3/1.0.0": {
+        "runtime": {
+          "BBDD12parte3.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BBDD12parte3/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

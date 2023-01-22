@@ -1,0 +1,5 @@
+print("a")
+print("e")
+print("i")
+print("o")
+print("u")

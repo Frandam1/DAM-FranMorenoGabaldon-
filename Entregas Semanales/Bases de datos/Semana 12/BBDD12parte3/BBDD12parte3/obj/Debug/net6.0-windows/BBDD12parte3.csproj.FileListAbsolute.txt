@@ -1,0 +1,17 @@
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\bin\Debug\net6.0-windows\BBDD12parte3.exe
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\bin\Debug\net6.0-windows\BBDD12parte3.deps.json
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\bin\Debug\net6.0-windows\BBDD12parte3.runtimeconfig.json
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\bin\Debug\net6.0-windows\BBDD12parte3.dll
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\bin\Debug\net6.0-windows\BBDD12parte3.pdb
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\obj\Debug\net6.0-windows\BBDD12parte3.csproj.AssemblyReference.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\obj\Debug\net6.0-windows\BBDD12parte3.Form1.resources
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\obj\Debug\net6.0-windows\BBDD12parte3.csproj.GenerateResource.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\obj\Debug\net6.0-windows\BBDD12parte3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\obj\Debug\net6.0-windows\BBDD12parte3.AssemblyInfoInputs.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\obj\Debug\net6.0-windows\BBDD12parte3.AssemblyInfo.cs
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\obj\Debug\net6.0-windows\BBDD12parte3.csproj.CoreCompileInputs.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\obj\Debug\net6.0-windows\BBDD12parte3.dll
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\obj\Debug\net6.0-windows\refint\BBDD12parte3.dll
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\obj\Debug\net6.0-windows\BBDD12parte3.pdb
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\obj\Debug\net6.0-windows\BBDD12parte3.genruntimeconfig.cache
+C:\Users\fran\Desktop\Practicas C#\BBDD12parte3\BBDD12parte3\obj\Debug\net6.0-windows\ref\BBDD12parte3.dll
