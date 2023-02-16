@@ -1,0 +1,15 @@
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\bin\Debug\net6.0\Calcukadora velocidad sonido examen.exe
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\bin\Debug\net6.0\Calcukadora velocidad sonido examen.deps.json
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\bin\Debug\net6.0\Calcukadora velocidad sonido examen.runtimeconfig.json
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\bin\Debug\net6.0\Calcukadora velocidad sonido examen.dll
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\bin\Debug\net6.0\Calcukadora velocidad sonido examen.pdb
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\obj\Debug\net6.0\Calcukadora velocidad sonido examen.csproj.AssemblyReference.cache
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\obj\Debug\net6.0\Calcukadora velocidad sonido examen.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\obj\Debug\net6.0\Calcukadora velocidad sonido examen.AssemblyInfoInputs.cache
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\obj\Debug\net6.0\Calcukadora velocidad sonido examen.AssemblyInfo.cs
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\obj\Debug\net6.0\Calcukadora velocidad sonido examen.csproj.CoreCompileInputs.cache
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\obj\Debug\net6.0\Calcukadora velocidad sonido examen.dll
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\obj\Debug\net6.0\refint\Calcukadora velocidad sonido examen.dll
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\obj\Debug\net6.0\Calcukadora velocidad sonido examen.pdb
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\obj\Debug\net6.0\Calcukadora velocidad sonido examen.genruntimeconfig.cache
+C:\Users\fran\Desktop\Examenes2\C#\Calcukadora velocidad sonido examen\obj\Debug\net6.0\ref\Calcukadora velocidad sonido examen.dll
