@@ -28,10 +28,16 @@ def calculaNumero(numero):
     datos = cursor.fetchall()
     for i in datos:
         numeros[int(i[numero])] = numeros[int(i[numero])] + 1
-   
+        
+   #Definimos el numero que queremos, en este caso el maximo
+        
     maximo = max(numeros)
-    # Encuentro el número que se repite más veces.
+    
+    # Encuentro el número que se repite más veces, y lo meto en una variable
     numero_maximo = numeros.index(maximo)
+
+    
+    #Lo retornamos para poder usarlo FUERA de la FUNCION
     return numero_maximo
 
 numero_maximo = calculaNumero(1)
