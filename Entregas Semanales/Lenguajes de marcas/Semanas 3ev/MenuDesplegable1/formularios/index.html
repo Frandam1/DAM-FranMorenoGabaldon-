@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<style>
+			select{width:90%;margin-top:4px;margin-bottom:4px;}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.6.4.js" 
+		integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" 
+		crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div id="formularios">
+				<div id="ajaxinicio"></div>
+		</div>
+		
+		<script>
+			$(document).ready(function(){ // nos aseguramos que el html se carga
+				$("#ajaxinicio").load("cargainicio.php") //con el id ajaxinicio, cargamos la pagina php
+				$("body").on("change","select",function(){ //detectamos cambios en los elementos select, se ejecuta solicitud ajax para datos serv
+					
+					$.ajax({
+						url : 'cargadesplegable.php', // Especificamos url
+						data : "idparent="+$(this).val(), // enviamos parametro idparent con el valor del select
+						type : 'POST',
+						dataType : 'text',
+						success : exito, 
+						error : error
+					});
+				})
+			})
+			function error(){
+				console.log("error")
+			
+			}
+			function exito(data){  //si tiene exito, esta funcion se encarga de actualizar el contenido
+				console.log("data")
+				$("#formularios").append(data)
+			}
+		
+		
+		</script>
+	
+	</body>
+
+
+
+
+</html>
