@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        
+        <script src="jquery-3.6.4.min.js"></script>
+        <style>
+            
+            p, input, button{
+                width: 100%;
+            }
+        
+        </style>
+    </head>
+
+    <body>
+        
+        <h1 id="titulo">App de Fran</h1>
+        <p>Introduce el operando num1</p>
+        <input type="text" id="operando1">
+        <p>Introduce el operando num2</p>
+        <input type="text" id="operando2">
+        <button type="text" id="calcula">Calcula</button>
+        <p>Resultado:</p>
+        <input type="text" id="resultado">
+        <script>
+            $(document).ready(function(){
+                $("#calcula").click(function(){
+                    var op1 = $("#operando1").val()*1
+                    var op2 = $("#operando2").val()*1
+                    var resultado = op1+op2
+                    $("#resultado").val(resultado)
+                })
+            })
+        
+        </script>
+        
+    </body>
+
+</html>
