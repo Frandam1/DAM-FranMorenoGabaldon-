@@ -1,0 +1,8 @@
+Pregunta 1.-
+Toma el ejercicio CRUD realizado a lo largo de las semanas 
+en Python + SQLite. Modifica el modelo de datos para realizar 
+una aplicación que pueda guardar una colección de CD's. 
+Los campos con los que trabajaremos son 
+1.-Titulo del CD 2.-Artista 3.-Año de lanzamiento 4.-Género musical - 
+Cuestión a tener en cuenta: Hay que modificar la estructura de la base de datos 
+SQLite existente O BIEN crear una nueva base de datos
