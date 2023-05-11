@@ -1,0 +1,11 @@
+cd c:
+cd users
+cd fran
+cd desktop
+cd Repositorio\ Centrailizado
+cd DAM-FranMorenoGabaldon-
+cd Simulacros\ 3ev
+
+
+./a.exe
+gcc simulacro2.c
