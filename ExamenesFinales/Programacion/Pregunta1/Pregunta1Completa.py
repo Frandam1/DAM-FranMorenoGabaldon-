@@ -1,4 +1,5 @@
 import sqlite3
+#Esta libreria es solo para darle un aspecto mas estetico a la lista que se genere
 from prettytable import PrettyTable
 
 # Establecemos la conexión con la base de datos
@@ -13,7 +14,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS cds1
 def listar_registros():
     c.execute("SELECT * FROM cds1")
     registros = c.fetchall()
-    if len(registros) == 0:
+    if len(registros) == 0:#En caso que no haya registros, el programa te avisa
         print("No se encontraron registros.")
         return
     t = PrettyTable(['Título', 'Artista', 'Año', 'Género'])
@@ -33,7 +34,7 @@ def agregar_registro():
 
 # Definimos una función para buscar un registro en la tabla
 def buscar_registro():
-    opcion_busqueda = input("¿Desea buscar por título o por artista? (t/a): ")
+    opcion_busqueda = input("¿Desea buscar por título o por artista? (t/a): ")#Definimos la opcion de buscar por dos registros
     if opcion_busqueda == "t":
         titulo = input("Ingrese el título a buscar: ")
         c.execute("SELECT * FROM cds1 WHERE titulo=?", (titulo,))

@@ -26,6 +26,8 @@ echo "</table>";*/
 
 //echo "Vamos a ver lo que queda despues de eliminar<br>";
 
+/*AQUI HACEMOS LA PETICION, PODEMOS ORDENAR TANTO ASC COMO DESC EN CUALQUIERA DE LAS COLUMNAS, YA SEAN NUMERICAS O LEXICAS */
+
 $datos = ($conexion->peticion("SELECT * FROM simulacro2 ORDER BY email ASC"));
 echo '<table border="1">';
 echo "<tr><td>nombre</td><td>apellidos</td><td>telefono</td><td>email</td></tr>";
