@@ -1,0 +1,9 @@
+Pregunta 2.-
+Generación de Imágenes con Python + PIL - 
+Para todas las imágenes de una carpeta (librería os, comando os.walk), 
+convierte las imágenes a blanco y negro (cada pixel será o bien blanco o 
+bien negro). No se pueden utilizar filtros predeterminados de PIL, OpenCV o 
+librerías similares, el tratamiento debe realizarse editando la información 
+de cada uno de los píxeles, con la librería PIL - Lo que se pregunta en esta 
+parte del examen es la realización de una operación "Umbral (GIMP)" 
+pero realizada en Python
