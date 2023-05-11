@@ -6,9 +6,22 @@ import os
 from PIL import Image
 
 # Directorio con las imágenes originales
-input_dir = "C:/Users\Moreno\Desktop\EXAMENES FINALES\SIMULACROS\Programacion\Pregunta2"
+input_dir = r"C:/Users/fran/Desktop/Repositorio Centrailizado/DAM-FranMorenoGabaldon-/Simulacros 3ev/Programacion/Pregunta2"
+
+# Comprueba si el directorio de entrada existe
+if os.path.exists(input_dir):
+    print("El directorio de entrada existe.")
+else:
+    print("El directorio de entrada no existe.")
+
 # Directorio de salida para las imágenes en blanco y negro
-output_dir = "C:/Users\Moreno\Desktop\EXAMENES FINALES\SIMULACROS\Programacion\Pregunta2\Convertidas"
+output_dir = r"C:/Users/fran/Desktop/Repositorio Centrailizado/DAM-FranMorenoGabaldon-/Simulacros 3ev/Programacion/Pregunta2/Convertidas"
+
+# Comprueba si el directorio de salida existe
+if os.path.exists(output_dir):
+    print("El directorio de salida existe.")
+else:
+    print("El directorio de salida no existe.")
 
 ## Itera sobre todas las imágenes en el directorio de entrada y las convierte a blanco y negro
 ##os.walk(input_dir) es una función que itera sobre todas las subcarpetas,

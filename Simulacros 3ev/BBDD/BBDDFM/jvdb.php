@@ -76,14 +76,30 @@
 
                     // Ordenar si hay cláusula ORDER BY
                     
-                    if(preg_match('/ORDER BY (.*) (ASC|DESC)?/', $consulta, $matches)){ //Usamos preg_match para buscar ORDER BY y si es ASC o DESC
-                        $campoOrdenamiento = $matches[1];                               //Guardamos la forma de ordenarlo en una variable
-                        $orden = isset($matches[2]) ? $matches[2] : 'ASC';              //Guardamos el orden de la variable orden, si no se especifica se asume ASC
-                        usort($array, function($a, $b) use ($campoOrdenamiento, $orden){//Usamos usort para ordenar el $array. Comparamos en funcion de las dos variables creadas anteiormente
-                            if($orden == 'ASC'){
-                                return strnatcmp($a[$campoOrdenamiento], $b[$campoOrdenamiento]);//Si es ASC, devolvemos los campos ordenados de $a a $b
+                    if (preg_match('/ORDER BY (.*) (ASC|DESC)?/', $consulta, $matches)) {
+                        
+                        //Almacenamos el campo de ordenamiento y elorden
+                        $campoOrdenamiento = $matches[1];
+                        $orden = isset($matches[2]) ? $matches[2] : 'ASC'; 
+                        
+                        //Usamos usort para ordenar el array, con funcion anonima como argumento
+                        usort($array, function($a, $b) use ($campoOrdenamiento, $orden) {
+                            
+                        /*Definimos la funcion anonima que usara usort. Se verifica el orden, si los campos son 
+                        numericos y si no lo son se usa strnatcmp para la comparacion lexica.La función de comparación devuelve un valor negativo si $a es menor que $b, cero si son iguales y un valor positivo si $a es mayor que $b. Esto permite que usort ordene el array en función de esta función de comparación.*/
+                            
+                            if ($orden == 'ASC') {
+                                if (is_numeric($a[$campoOrdenamiento]) && is_numeric($b[$campoOrdenamiento])) {
+                                    return $a[$campoOrdenamiento] - $b[$campoOrdenamiento];
+                                } else {
+                                    return strnatcmp($a[$campoOrdenamiento], $b[$campoOrdenamiento]);
+                                }
                             } else {
-                                return strnatcmp($b[$campoOrdenamiento], $a[$campoOrdenamiento]);//Si no lo es, los devolvemos al reves (DESC)
+                                if (is_numeric($a[$campoOrdenamiento]) && is_numeric($b[$campoOrdenamiento])) {
+                                    return $b[$campoOrdenamiento] - $a[$campoOrdenamiento];
+                                } else {
+                                    return strnatcmp($b[$campoOrdenamiento], $a[$campoOrdenamiento]);
+                                }
                             }
                         });
                     }
