@@ -4,7 +4,9 @@ session_start();
 // Abro la conexion con BBDD
 include "../admin/conexion.php";
 
+$peticion = "";
 
+if (isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['peso']) && isset($_POST['aficiones'])) {
 
 $peticion = "
 
@@ -13,8 +15,16 @@ WHERE
 nombre = '".$_POST['nombre']."'
 AND
 apellidos = '".$_POST['apellidos']."'
+AND
+peso = '".$_POST['peso']."'
+AND
+aficiones = '".$_POST['aficiones']."'
 LIMIT 1
 ";
+
+} else {
+    echo "algo falla";
+}
 
 $resultado = mysqli_query($enlace,$peticion);
 

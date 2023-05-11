@@ -172,15 +172,14 @@
                 
                 <?php 
                
-                $peticion = "SHOW COLUMNS FROM ".$_GET['tabla'].";";
-                $resultado = mysqli_query($enlace,$peticion);
-                    $contador = 0;
-                    $cabeceras;
-                while($fila = $resultado->fetch_assoc()) {
+                //$peticion = "SHOW COLUMNS FROM ".$_GET['tabla'].";";
+                $peticion = "SHOW COLUMNS FROM personas";
+                $resultado = mysqli_query($enlace, $peticion);
+                $contador = 0;
+                $cabeceras;
+                while ($fila = $resultado->fetch_assoc()) {
                     $cabeceras[$contador] = $fila['Field'];
-                echo '
-                    <th scope="col">'.$fila['Field'].'</th>
-                ';
+                    echo '<th scope="col">' . $fila['Field'] . '</th>';
                     $contador++;
                 }
                 //var_dump($cabeceras);
