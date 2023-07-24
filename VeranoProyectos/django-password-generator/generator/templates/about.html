@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJANGO PRUEBA</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Resumen APP</h1>
+    <h2>
+        Parte Estetica/HTML+BOOT
+    </h2>
+    <div class="container">
+        <h5 class="mb-3">Resumen de los archivos:</h5>
+        <ol>
+            <li>
+                <code>urls.py</code>:
+                <ul>
+                    <li>Importa las funciones y clases necesarias de Django.</li>
+                    <li>Define una lista de patrones de URL que vinculan las URL a las vistas correspondientes.</li>
+                    <li>Hay cuatro rutas definidas: 'admin/', 'about', '', y 'password-generado'.</li>
+                </ul>
+            </li>
+            <li>
+                <code>navbar.html</code>:
+                <ul>
+                    <li>Es una plantilla HTML que representa la barra de navegación de la aplicación.</li>
+                    <li>Incluye un enlace a la página principal ('/') y a la página "About" ('/about').</li>
+                </ul>
+            </li>
+            <li>
+                <code>home.html</code>:
+                <ul>
+                    <li>Es una plantilla HTML que representa la página principal del generador de contraseñas.</li>
+                    <li>Extiende la plantilla base 'layout.html'.</li>
+                    <li>Contiene un formulario donde se puede seleccionar la longitud y las opciones de generación de contraseñas.</li>
+                    <li>Al enviar el formulario, se redirige a la vista 'password' para generar una contraseña.</li>
+                </ul>
+            </li>
+            <li>
+                <code>generado.html</code>:
+                <ul>
+                    <li>Es una plantilla HTML que representa la página de generación de contraseñas.</li>
+                    <li>Extiende la plantilla base 'layout.html'.</li>
+                    <li>Muestra la contraseña generada en un formato estilizado.</li>
+                </ul>
+            </li>
+            <li>
+                <code>layout.html</code>:
+                <ul>
+                    <li>Es una plantilla base que define la estructura común de las páginas.</li>
+                    <li>Incluye la barra de navegación.</li>
+                    <li>Define un bloque de contenido ('content') que puede ser sobrescrito por otras plantillas.</li>
+                </ul>
+            </li>
+        </ol>
+        
+        <p>Recuerda que para ejecutar el servidor en Django, debes utilizar el comando <code>python manage.py runserver</code>.</p>
+    </div>
+    
+    <h2>
+        Parte Funcional/DJANGO
+    </h2>
+    <div class="container">
+        <h5 class="mb-3">El generador de contraseñas implementado en estas funciones de Django tiene las siguientes características:</h5>
+        <ul>
+            <li>La función <code>home(request)</code> renderiza la plantilla 'home.html', que muestra el formulario para generar una contraseña.</li>
+            <li>La función <code>about(request)</code> renderiza la plantilla 'about.html', que muestra información sobre la aplicación o el generador de contraseñas.</li>
+            <li>La función <code>password(request)</code> se encarga de generar la contraseña según los parámetros proporcionados por el usuario a través del formulario.</li>
+            <li>Se inicializa una lista de caracteres con el alfabeto en minúsculas.</li>
+            <li>La variable <code>generated_password</code> se inicializa como una cadena vacía donde se almacenará la contraseña generada.</li>
+            <li>Se obtiene la longitud de la contraseña deseada del parámetro GET 'lenght' enviado por el formulario.</li>
+            <li>Dependiendo de las opciones seleccionadas por el usuario en el formulario (mayúsculas, caracteres especiales y números), se añaden los caracteres correspondientes a la lista de caracteres.</li>
+            <li>Se utiliza un bucle <code>for</code> para generar una contraseña de la longitud especificada. En cada iteración, se elige aleatoriamente un carácter de la lista de caracteres y se añade a la contraseña generada.</li>
+            <li>Finalmente, se renderiza la plantilla 'password.html', pasando la contraseña generada como contexto para que se muestre al usuario.</li>
+        </ul>
+    </div>
+        
+    {% endblock %}
+</body>
+</html>
