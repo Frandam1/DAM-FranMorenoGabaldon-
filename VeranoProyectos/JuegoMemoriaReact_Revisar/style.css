@@ -9,24 +9,30 @@
 
 body {
     font-family: 'Belanosima', monospace;
-    background: linear-gradient(rgb(248, 113, 113), rgb(209, 213, 219), rgb(59, 130, 246));
-    color: rgb(25, 23, 121);
+    background: rgb(72,79,92);
+    background: linear-gradient(90deg, rgba(72,79,92,1) 31%, rgba(12,29,74,1) 72%); 
     line-height: 1;
     height: 100vh;
   }
 
 pre {
   text-align: center;
-  color: rgb(106, 18, 133);
+  color: rgb(255, 255, 255);
   justify-content: center;
   height: 100%;
   flex-direction: column;
   font-size: 25px;
   font-family: 'Belanosima', monospace;
-  font-size: 20px;
   font-weight: bolder;
   margin-top: 5%;
+  font-size: 40px;
+  margin-right: 4%;
+  
 
+}
+
+span {
+  color: coral;
 }
 
 .input-box,
@@ -45,42 +51,55 @@ input {
 }
 
 button {
-  background-color: sandybrown;
-  border: 1px dashed #4547a8;
+  background-color: rgb(96, 244, 108);
+  border: 1px  #4547a8;
+  border-radius: 30rem;
   outline: none;
   cursor: pointer;
   padding: 8px 16px;
   font-size: 14px;
   text-transform: uppercase;
+  font-family: 'Belanosima', monospace;
 }
 
 .numero-caja {
   text-align: center;
+  font-size: 10px;
 }
 
 .divider {
-  color: #122530;
+  color: #ffffff;
   margin: 20px 0;
+  font-size: 1.2rem;
 }
 
 .numero {
-  font-size: 36px;
+  font-size: 60px;
   color: rgb(199, 88, 76);
 }
 
 .info-box {
+  width: 100%;
   padding-bottom: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
+  
 }
 
 .level {
-  color: rgb(24, 116, 196);
+  color: rgb(78, 196, 24);
   font-size: 33px;
   margin-left: 15%;
 }
 .errores {
-  color: red;
+  color: rgba(255, 98, 0, 0.763);
   font-size: 33px;
   margin-right: 15%;
+}
+
+form {
+  padding: 3rem;
+  margin-right: 5rem;
+  color: #ffffff;
+  font-size: 26px;
 }

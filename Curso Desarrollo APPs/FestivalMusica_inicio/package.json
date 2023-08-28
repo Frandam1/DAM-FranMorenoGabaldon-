@@ -1,0 +1,22 @@
+{
+  "name": "festivalmusica_inicio",
+  "version": "1.0.0",
+  "description": "Proyecto HTML, Gulp, SASS",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css",
+    "tarea": "gulp tarea",
+    "dev": "gulp dev"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp"
+  ],
+  "author": "Fran Moreno",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.66.1"
+  }
+}

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../ApuntesJS"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "JavaScript_DOM_Eventos_inicio"
+	}
+}
