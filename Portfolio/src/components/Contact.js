@@ -20,8 +20,8 @@ const Contact = () => {
           tracking-wide'>
                 Contactar
               </h4>
-              <h2 className='text-[45] lg:text-[90px] leading-none mb-12'>
-                Trabajemos <br /> Juntos!
+              <h2 className='h1 text-[45px] lg:text-[80px] leading-none mb-12 font-four'>
+                Trabajemos <br /> juntos!
               </h2>
             </div>
           </motion.div>

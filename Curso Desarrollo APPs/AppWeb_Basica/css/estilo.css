@@ -20,15 +20,15 @@ Flex-direction: column, usamos align-intems para centrar
 html {
     font-size: 62.5%;
     box-sizing: border-box;
-    /* Snippet para no modificar tamaño cajas*/
-    scroll-snap-type: y mandatory;
+    /* Snippet para no modificar tamaño cajas
+    scroll-snap-type: y mandatory;*/
 }
-
-.servicios, .navegacion-principal, .formulario{ /* Scrol snap. por pulir*/
+/* 
+.servicios, .navegacion-principal, .formulario{ Scrol snap. por pulir
     scroll-snap-align: center;
     scroll-snap-stop: always;
 }
-
+*/
 *,
 *:before,
 *:after {
@@ -200,7 +200,7 @@ h3 {
  .servicio .icono {
     height: 15rem;
     width: 15rem;
-    background-color: darkkhaki;
+    background-color: rgba(6, 218, 147, 0.93);
     border-radius: 50%;
     display: flex;
     justify-content: space-evenly;

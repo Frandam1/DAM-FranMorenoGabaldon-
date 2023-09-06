@@ -11,7 +11,7 @@ const services = [
   {
     name: 'Técnico Superior Desarrollo Aplicaciones Multiplataforma',
     description: `Centro de estudios CAPITOL`,
-    link: 'Certificado',
+    link: 'Cursando',
   },
   {
     name: 'Introducción a la I.A. y los algoritmos',
@@ -21,7 +21,7 @@ const services = [
   {
     name: 'Gestión de la seguridad informática de la empresa',
     description: `Fórmate || S.E.P.E. || 90 horas`,
-    link: 'Certificado',
+    link: 'Cursando',
   },
 
 
@@ -31,44 +31,36 @@ const services2 = [
   {
     name2: 'Curso en Desarrollo Aplicaciones Web Completo || Udemy ',
     description2: `HTML || CSS3 || JS || AJAX || PHP || MySQL `,
-    link2: 'Certificado',
+    link2: 'Cursando',
   },
   {
     name2: 'Programación de Apps para Android con Kotlin || Udemy',
     description2: `POO || AE || Sistema de Pagos || Integracion APIs || Administración BBDD || Udemy `,
-    link2: 'Certificado',
+    link2: 'Cursando',
   },
   {
     name2: 'Spring Boot y Angular: Creando aplicaciones cómo Fullstack || Udemy',
     description2: `Spring Boot 3, Api Rest, Keycloak, Docker, JUnit, Mockito, Angular 16, Angular Material, Chartjs, Git, GitFlow, Kanban `,
-    link2: 'Certificado',
+    link2: 'Cursando',
   },
   
 ];
 const services3 = [
   {
-    name3: 'Zona 3',
-    description3: `Proyecto2 Descripcion del proyecto1.
-                  Proyecto2 Descripcion del proyecto2.
-                  Proyecto2 Descripcion del proyecto2.
-                  Proyecto2 Descripcion del proyecto2.`,
-    link3: 'Certificado',
+    name3: 'British Council || International Certificate',
+    description3: `Overall CEFR Level B2 || Aptis ESOL`,
+    link3: 'Cursando',
   },
   {
-    name3: 'Zona 3',
-    description3: `Proyecto2 Descripcion del proyecto2.
-                  Proyecto2 Descripcion del proyecto2.
-                  Proyecto2 Descripcion del proyecto2.
-                  Proyecto2 Descripcion del proyecto2.`,
-    link3: 'Certificado',
+    name3: 'Cloud Computing || Google Activate',
+    description3: `Conocimientos generales en áreas del Cloud Computing || Desarrollado por la EOI || 40 horas`,
+    link3: 'Cursando',
   },
   {
-    name3: 'Zona 3',
-    description3: `Proyecto2 Descripcion del proyecto3.
-                  Proyecto2 Descripcion del proyecto2.
-                  Proyecto2 Descripcion del proyecto2.
-                  Proyecto2 Descripcion del proyecto2.`,
-    link3: 'Certificado',
+    name3: 'Competencias digitales para profesionales || Google Activate',
+    description3: `Conocimientos de competencias digitales
+      en el uso de herramientas, sistemas de seguridad y comunicación || 40 horas`,
+    link3: 'Cursando',
   },
   
 ];
@@ -214,7 +206,7 @@ const Services = () => {
             className='border-b border-white/20 h-[146px] mb-[38px] flex'
             key={index}>
               <div className='max-w-[476px]'>
-                <h4 className='text-[20px] tracking-wider font-primary 
+                <h4 className='text-[20px] tracking-wider font-primary text-accent2
                 font-semibold mb-6'>
                   {name3}
                 </h4>
@@ -229,7 +221,7 @@ const Services = () => {
                   <GrCertificate />
                 </a>
                 <a href='#' className='text-gradient text-sm'>
-                 
+                {link3}
                 </a>
               </div>
           </div>

@@ -1,19 +1,40 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState  } from "react";
 import { fadeIn } from '../variants';
 import { motion } from 'framer-motion';
-import img5 from "../modals/img/pro1.png";
+
+import img5 from "../modals/img/bull.png";
+import img8 from "../modals/img/bull1.png";
+import img6 from "../modals/img/abull5.png";
+import img7 from "../modals/img/abull6.png";
+import img9 from "../modals/img/abull7.png";
+
 import {
-    FaBootstrap,
     FaHtml5,
-    FaSass,
-    FaJs,
-    FaAngular,
-    FaReact,
     FaWindowClose,
-    FaNodeJs
-  } from "react-icons/fa";
+    FaArrowRight,
+    FaArrowLeft
+   } from "react-icons/fa";
 
 const Modal = ({ open, onClose }) => {
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [img5, img6, img7, img8, img9];
+
+  const handlePrevClick = () => {
+    if (currentImageIndex > 0) {
+      setCurrentImageIndex(currentImageIndex - 1);
+    }
+    console.log("Prev button clicked");
+  };
+
+  const handleNextClick = () => {
+    if (currentImageIndex < images.length - 1) {
+      setCurrentImageIndex(currentImageIndex + 1);
+    }
+    console.log("nesrt button clicked");
+  };
+  const currentImage = images[currentImageIndex];
+
   useEffect(() => {
     if (open) {
       // Bloquear el scroll al abrir el modal
@@ -27,11 +48,12 @@ const Modal = ({ open, onClose }) => {
       // Asegurarse de restaurar el scroll cuando el componente se desmonta
       document.body.style.overflow = "auto";
     };
-  }, [open]);
+  }, [open]); 
 
   if (!open) return null;
 
   return (
+
     <motion.div
             variants={fadeIn('center', 0.3)}
             initial='hidden'
@@ -44,7 +66,30 @@ const Modal = ({ open, onClose }) => {
       <div onClick={(e) => {
         e.stopPropagation()
       }} className="modalContainer">
-        <img className="modalImg" src={img5} alt="" />
+        <div className="imgContainer">
+          <img className="modalImg" src={currentImage} alt="" />
+          <div className="botonContenedor">
+            <button
+              onClick={handlePrevClick} 
+              className="btn w-9 h-9 mt-10 ml-2
+              flex justify-center items-center"
+              disabled={currentImageIndex === 0}
+              >
+                <i><FaArrowLeft/></i>
+              
+            </button>
+            <button 
+              onClick={handleNextClick}
+              className="btn w-9 h-9 mt-10 ml-2
+              "
+              disabled={currentImageIndex === images.length - 1}
+              >
+              <i className="btn w-9 h-9 
+                  flex justify-center items-center"><FaArrowRight/></i>
+            </button>
+          </div>
+
+        </div>
         <div className="modalDerecha">
           <p onClick={onClose} className="btnCerrar text-[44px]">
             <FaWindowClose/>
@@ -59,12 +104,9 @@ const Modal = ({ open, onClose }) => {
             </div>
             <h4 className='text-[20px] text-accent2 tracking-wider font-primary 
                 font-bold'>Caracteristicas</h4>
-            <ul class="list-disc list-inside">
-                <li class="mb-3 py-4 border-white/20 font-four">Punto uno</li>
-                <li class="mb-3 py-4 border-white/20 font-four">Punto uno</li>
-                <li class="mb-3 py-4 border-white/20 font-four">Punto uno</li>
-                <li class="mb-3 py-4 border-white/20 font-four">Punto uno</li>
-                <li class="mb-3 py-4 border-white/20 font-four">Punto uno</li>
+            <ul className="list-disc list-inside">
+                <li className="mb-3 py-2 border-white/20 font-four">Punto uno</li>
+                <li className="mb-3 py-2 border-white/20 font-four">Punto uno</li>
             </ul>
           </div>
         </div>

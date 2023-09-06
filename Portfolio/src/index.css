@@ -60,20 +60,41 @@
   z-index: 60;
 }
 
-.modalImg {
-  width: 45rem;
-  height: 45rem;
+.imgContainer {
+  width: 50rem;
+  height: 40rem;
   object-fit: cover;
   padding: 2rem;
   border-radius: 5rem;
+  z-index: 1000;
 }
+
+.modalImg {
+  margin-top: 4rem;
+  border-radius: 2rem;
+  max-width: 40rem;
+  margin-left: 2rem;
+  border: .5rem solid rgba(255, 255, 255, 0.724);
+}
+
+.botonContenedor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-left: 18rem;
+}
+
+
 .modalDerecha {
   position: fixed;
+
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   top: 20px;
+  z-index: -1;
 }
 .btnCerrar{
   position: fixed;
@@ -93,18 +114,35 @@
 
 
 
-  @media screen and (max-width: 500px) {
-    .modalImg {
+  @media screen and (max-width: 900px) {
+    .imgContainer {
       display: none;
     }
     .modalContainer{
      
       flex-direction: row;
-      top: 0;
-      left: 0;
+      top: 2rem;
+      left: 2.5rem;
       transform: none;
-      width: 100%;
-      height: 100vh;
+      width: 80%;
+      height: 80vh;
+    }
+    .modalDerecha{
+      right: 3rem;
+      position: none;
+      
+    }
+    .botonContenedor{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+    }
+    .contenido{
+      justify-content: center;
+      align-content: center;
+     
+      position: absolute;
     }
     
   }
