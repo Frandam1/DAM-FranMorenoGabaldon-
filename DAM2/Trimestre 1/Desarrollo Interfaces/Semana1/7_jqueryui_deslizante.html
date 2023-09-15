@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Control Deslizante</title>
+
+    <style>
+        
+        .slider-contenedor {
+            width: 300px;
+            margin: 20px;
+        }
+
+        .slider {
+            width: 100%;
+        }
+
+        
+        .slider-value {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+
+    <script>
+        
+        function updateSliderValue(value) {
+            document.getElementById("valor_slider").innerText = "Valor seleccionado: " + value;
+        }
+
+        
+        function initSlider() {
+            var slider = document.getElementById("slider");
+            var output = document.getElementById("valor_slider");
+            
+            // Mostrar el valor inicial
+            updateSliderValue(slider.value);
+
+            // Actualizar el valor cuando se cambia el control deslizante
+            slider.oninput = function() {
+                updateSliderValue(this.value);
+            };
+        }
+    </script>
+</head>
+<body onload="initSlider()">
+    <div class="slider-contenedor">
+        
+        <input type="range" min="0" max="100" value="50" class="slider" id="slider">
+       
+        <div class="slider-value" id="valor_slider"></div>
+    </div>
+</body>
+</html>

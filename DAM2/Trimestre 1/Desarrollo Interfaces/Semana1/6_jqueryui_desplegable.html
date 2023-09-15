@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Panel Plegable y Expansible</title>
+
+    <style>
+        
+        .panel {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+ 
+        .boton {
+            cursor: pointer;
+            color: #007bff;
+        }
+
+
+        .contenido {
+            display: none;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $(".boton").click(function(){
+                
+                $(this).next(".contenido").slideToggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="panel">
+        <h3>Panel Plegable</h3>    
+        <div class="boton">Plegar/Desplegar</div>
+        <div class="contenido">
+            <p>Este es un contenido que puede plegarse y desplegarse.</p>
+            <ul>
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

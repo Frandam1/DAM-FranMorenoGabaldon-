@@ -128,8 +128,9 @@
       height: 80vh;
     }
     .modalDerecha{
-      right: 3rem;
+      right: 4rem;
       position: none;
+      margin: 0 auto;
       
     }
     .botonContenedor{
@@ -139,11 +140,18 @@
       position: absolute;
     }
     .contenido{
-      justify-content: center;
-      align-content: center;
-     
-      position: absolute;
+      margin: 0 auto;
+      align-items: center;
+      margin-left: 6.5rem;
     }
+   .lista{
+    margin: 0 auto;
+    
+    align-items: center;
+    font-size: 10px;
+   
+   }
+  
     
   }
 

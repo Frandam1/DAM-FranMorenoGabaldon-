@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        #mueveme{
+            width: 200px;
+            height: 200px;
+            background: rgb(210, 11, 181);
+            border-radius: 50%;
+        }
+        #mueveme2{
+            width: 200px;
+            height: 200px;
+            background: rgba(35, 157, 147, 0.765);
+            border-radius: 50%;
+        }
+        #destino{
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            // Almacena los atributos originales
+            var originalStyles = {};
+            $(".se_mueve").each(function() {
+                originalStyles[this.id] = {
+                    borderRadius: $(this).css("border-radius")
+                };
+            });
+
+            $(".se_mueve").draggable({
+                opacity: 0.5,
+                revert: function(validDrop) {
+                    if (!validDrop) {
+                        // Restaura los atributos originales
+                        var id = $(this).attr("id");
+                        $(this).css("border-radius", originalStyles[id].borderRadius);
+                    }
+                    return !validDrop;
+                }
+            });
+
+            $("#destino").droppable({
+                drop: function(event, ui){
+                    var id = ui.draggable.attr("id");
+                    // Modifica el estilo del elemento dentro del destino
+                    ui.draggable.css("border-radius", "0%");
+                    // Puedes realizar otras acciones cuando se suelta en el destino
+                    $(this).css("background", "black");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="mueveme" class="se_mueve"></div>
+    <div id="mueveme2" class="se_mueve"></div>
+    <div id="destino"></div>
+</body>
+</html>

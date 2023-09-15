@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="js/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="js/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/jquery-ui.theme.min.css">
+    
+    <style>
+        #mueveme{
+            width: 200px;
+            height: 200px;
+            background: rgb(210, 11, 181);
+            border-radius: 50%;
+        }
+        #mueveme2{
+            width: 200px;
+            height: 200px;
+            background: rgba(35, 157, 147, 0.765);
+            border-radius: 50%;
+        }
+        #destino{
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".se_mueve").draggable({opacity:0.5})
+            $("#destino").droppable({drop:function(event, ui){
+                //console.log(event)
+                console.log(ui.draggable[0].getAttribute("id"))
+                //console.log("EJEMPLO")
+                $("#"+ui.draggable[0].getAttribute("id")).css("border-radius","0%")
+                $(this).css("background","black")
+            }
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="mueveme" class="se_mueve"></div>
+    <div id="mueveme2" class="se_mueve"></div>
+    <div id="destino"></div>
+</body>
+</html>

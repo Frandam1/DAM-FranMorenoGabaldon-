@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="js/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="js/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/jquery-ui.theme.min.css">
+    
+    <style>
+        #redimension{
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            padding: 10px;
+            outline: none;
+            font-family: Verdana,Tahoma, sans-serif;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(redimension).resizable()
+            $(redimension).draggable()
+        
+        })
+    </script>
+</head>
+<body>
+    <div id="redimension" contenteditable="true" class="se_mueve"></div>
+  
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videojuego</title>
+    <style>
+        canvas{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="lienzo" width="512px" height="512px"></canvas>
+    <script>
+        // Creamos un contexto capturando el lienzo
+        var contexto = document.getElementById("lienzo").getContext("2d");
+
+        // Variables globales del programa
+        var temporizador;
+
+        // Parametrizamos la posición del círculo
+        var x = 256;
+        var y = 256;
+
+        inicio();
+        
+        // Condiciones iniciales del juego
+        function inicio(){
+            console.log("funcion inicio");
+            temporizador = setTimeout(bucle, 1000);
+        }
+
+        // Bucle principal del juego
+        function bucle(){
+            contexto.clearRect(0, 0, 512, 512);
+
+            // Dibuja un círculo morado
+            contexto.beginPath();
+            contexto.arc(x, y, 33, 0, 2 * Math.PI);
+            contexto.fillStyle = "purple";
+            contexto.fill();
+
+            // Movimiento aleatorio
+            x += Math.random()-0.5;
+            y += Math.random()-0.5;
+            
+
+            clearTimeout(temporizador); // Eliminamos el temporizador actual
+            temporizador = setTimeout(bucle, 10); // Creamos uno nuevo
+            console.log("Soy el bucle");
+        }
+    </script>
+</body>
+</html>

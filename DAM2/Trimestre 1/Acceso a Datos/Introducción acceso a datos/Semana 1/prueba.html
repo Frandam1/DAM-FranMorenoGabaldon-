@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- Agrega los enlaces a Bootstrap CSS y JavaScript -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Mi Aplicación</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+  
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control mb-2" id="documentname" placeholder="Nombre del Documento">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary mb-2" id="guardar">Guardar</button>
+            </div>
+            <div class="col">
+                <select class="form-control mb-2" id="tipotexto">
+                    <option value="p">Texto de párrafo</option>
+                    <option value="h1">Encabezado 1</option>
+                    <option value="h2">Encabezado 2</option>
+                    <option value="h3">Encabezado 3</option>
+                    <option value="h4">Encabezado 4</option>
+                    <option value="h5">Encabezado 5</option>
+                    <option value="h6">Encabezado 6</option>
+                    <option value="pre">Preformateado</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <select class="form-control mb-2" id="selectfont">
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Garamond">Garamond</option>
+                </select>
+            </div>
+            <div class="col">
+                <input type="number" class="form-control mb-2" id="fontsize" value="10">
+            </div>
+            <div class="col">
+                <button class="btn btn-secondary mb-2" id="bold"><strong>B</strong></button>
+                <button class="btn btn-secondary mb-2" id="cursive"><em>C</em></button>
+                <button class="btn btn-secondary mb-2" id="underline"><u>U</u></button>
+            </div>
+            <div class="col">
+                <input type="color" class="form-control mb-2" id="fontcolor">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="pagina" contenteditable="true" class="bg-white p-4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

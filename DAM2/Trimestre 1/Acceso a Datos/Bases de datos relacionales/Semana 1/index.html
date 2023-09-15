@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+    crossorigin="anonymous"></script>
+    <style>
+        html, body{width: 100%; height: 100%;padding: 0px;margin: 0px;}
+
+        #fondopagina{
+            background: grey;
+        }
+        #pagina{background: white;width: 800px;margin: auto;padding: 20px;height: 1200px;
+        position: relative;top: 70px;box-shadow: 0px 20px 30px black;outline: none;}
+
+        #menu, #herramientas{position: fixed;top: 0px;height: 20px;background: white;width: 100%;z-index: 1000;}
+        #herramientas{position: fixed;top: 20px;height: 50px;}
+    </style>
+     <script>
+        $(document).ready(function(){
+          
+        })
+    </script>
+   
+</head>
+<body>
+    <table width=100% height=100%>
+        <tr height=20px id="menu">
+            <td>
+               Menu         
+            </td>
+        </tr>
+        <tr height=50px id="herramientas">
+            <td>
+                <button id="guardar">Guardar</button>
+                <select id="tipotexto">
+                    <option value="p">Texto de parrafo</option>
+                    <option value="h1">Encabezado 1</option>
+                    <option value="h2">Encabezado 2</option>
+                    <option value="h3">Encabezado 3</option>
+                    <option value="h4">Encabezado 4</option>
+                    <option value="h5">Encabezado 5</option>
+                    <option value="h6">Encabezado 6</option>
+                    <option value="pre">Preformateado</option>
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td id="fondopagina">
+                <div id="pagina" contenteditable="true"></div>
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

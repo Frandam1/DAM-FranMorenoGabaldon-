@@ -13,6 +13,7 @@ import AppTienda1 from "../modals/AppTienda1";
 import Memoria from "../modals/Memoria";
 import AppFest from "../modals/AppFest";
 import AppCasa from "../modals/AppCasa";
+import Festcss from "../modals/Festcss";
 
 // Imagenes para los proyectos
 
@@ -381,7 +382,7 @@ transition-all duration-700 z-50"
       >
         + Info
       </button>
-      <AppFest open={openAppFest} onClose={() => setOpenAppFest(false)} />
+      <Festcss open={openAppFest} onClose={() => setOpenAppFest(false)} />
     </div>
   </div>
   {/**--------------------------- INICIO OCTAVA CARD----------------------------------------*/}
@@ -444,7 +445,7 @@ transition-all duration-700 z-50"
                 personales
               </h2>
               <p className="max-w-sm mt-16 mb-16">
-                Texto random,Texto random,Texto random,Texto random
+                Texto random2121,Texto random,Texto random,Texto random
               </p>
               <button onClick={handlePageChange} className="btn btn-lg mt-12">
                 {buttonText}

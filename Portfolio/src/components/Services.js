@@ -57,7 +57,7 @@ const services3 = [
     link3: 'Cursando',
   },
   {
-    name3: 'Competencias digitales para profesionales || Google Activate',
+    name3: 'Competencias digitales || Google Activate',
     description3: `Conocimientos de competencias digitales
       en el uso de herramientas, sistemas de seguridad y comunicación || 40 horas`,
     link3: 'Cursando',
@@ -203,7 +203,7 @@ const Services = () => {
           const {name3, description3, link3} = service;
           return (
           <div 
-            className='border-b border-white/20 h-[146px] mb-[38px] flex'
+            className='border-b border-white/20 h-[136px] mb-[30px] flex'
             key={index}>
               <div className='max-w-[476px]'>
                 <h4 className='text-[20px] tracking-wider font-primary text-accent2

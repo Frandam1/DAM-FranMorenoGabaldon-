@@ -1,0 +1,41 @@
+.grid {
+    outline: 4px solid #fff;
+    width: 80%;
+    height: 500px;
+    margin: 10pc auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "e1 e1 e2"
+    "e3 e3 e2"
+    "e3 e3 e2"
+    "e4 e4 e4"
+    ;
+    gap: 2rem;
+    background-color: aquamarine;
+}
+
+.item{
+    font-size: 2rem;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.caja1 {
+    background-color: blue;
+    grid-area: e1;
+}
+.caja2{
+    background-color: brown;
+    grid-area: e2;
+}
+.caja3{
+    background-color: salmon;
+    grid-area: e3;
+}
+.caja4{
+    background-color: violet;
+    grid-area: e4;
+}

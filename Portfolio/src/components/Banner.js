@@ -64,7 +64,7 @@ const Banner = () => {
             viewport={{ once: false, amount: 0.7}}
             className='flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0'>
             <button className='btn btn-lg'>Contacto</button>
-            <a href='' className='text-gradient btn-link'>
+            <a href='https://drive.google.com/file/d/1J3sVhy42tAcjFx6LxUuv_RgKJ65IJBdH/view?usp=drive_link' className='text-gradient btn-link'>
               Descargr CV
             </a>
           </motion.div>

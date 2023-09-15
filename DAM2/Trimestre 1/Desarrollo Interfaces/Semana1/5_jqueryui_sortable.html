@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="js/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="js/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/jquery-ui.theme.min.css">
+    
+    <style>
+        ul{
+            list-style-type:none;
+            padding: 0%;
+            margin: 0;
+        }
+        li{
+            width: 200px;
+            border: 2px solid black; 
+            padding: 10px;
+        }
+        .ui-selected{
+            color:white;
+            background: darkcyan;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".ordenable").sortable();
+            $(".ordenable li").hover(
+                function(){
+                    $(this).find("span").addClass("ui-icon ui-icon-circle-arrow-s");
+                },
+                function(){
+                    $(this).find("span").removeClass("ui-icon ui-icon-circle-arrow-n");
+                }
+            );
+        });
+    </script>
+
+</head>
+<body>
+   
+    <ul class="ordenable">
+        <li>Uno<span class="ui-icon ui-icon-circle-arrow-n"></span> </li>
+        <li>Dos<span class="ui-icon ui-icon-circle-arrow-n"></span> </li>
+        <li>Cuatyro<span class="ui-icon ui-icon-circle-arrow-n"></span> </li>
+        <li>tercero<span class="ui-icon ui-icon-circle-arrow-n"></span> </li>
+        <li>quinto<span class="ui-icon ui-icon-circle-arrow-n"></span> </li>
+        <li>sexto<span class="ui-icon ui-icon-circle-arrow-n"></span> </li>
+    </ul>
+  
+</body>
+</html>

@@ -101,11 +101,11 @@ const ProyectoCrud = ({ open, onClose }) => {
             <p onClick={onClose} className="btnCerrar text-[44px]">
               <FaWindowClose />
             </p>
-            <div className="contenido">
-              <h2 className="h2 leading-tight text-accent font-extrabold">
+            <div className="contenido  left-6 sm:relative">
+              <h2 className="h2 leading-tight text-accent font-extrabold mt--2 text-[20px] sm:text-4xl sm:py-2">
                 C.R.U.D. Básico{" "}
               </h2>
-              <div className="iconos1 flex justify-end  text-[40px] py-6 gap-x-3">
+              <div className=" flex justify-center text-[24px] py-2 gap-x-3 sm:text-[30px] sm:py-4">
                 <FaHtml5 />
                 <FaHtml5 />
                 <FaHtml5 />
@@ -117,12 +117,15 @@ const ProyectoCrud = ({ open, onClose }) => {
               >
                 Caracteristicas
               </h4>
-              <ul className="list-disc list-inside">
-                <li className="mb-3 py-2 border-white/20 font-four">
+              <ul className="lista list-disc list-inside">
+                <li className="mb-3 py-2 border-white/20 font-four sm:text-[22px]">
                 Spring||Angular||MongoDB
                 </li>
-                <li className="mb-3 py-2 border-white/20 font-four">
-                  Punto uno
+                <li className="mb-3 py-2 border-white/20 font-four sm:text-[22px]">
+                  Punto unos
+                </li>
+                <li className="mb-3 py-2 border-white/20 font-four sm:text-[22px]">
+                  Punto unos
                 </li>
               </ul>
             </div>
