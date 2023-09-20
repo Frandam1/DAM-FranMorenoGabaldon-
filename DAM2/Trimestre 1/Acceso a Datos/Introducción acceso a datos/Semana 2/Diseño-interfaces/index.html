@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Interfaces</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous">
+    </script>
+
+
+
+    <script>
+        $(document).ready(function(){
+            $("#carpetaactual").load("leecarpeta.php")
+            $(document).on("click",".item",function(){
+                
+                if($(this).attr("filetype") == "html"){
+                
+                    window.location = "documento/index.php?file="+$(this).attr("filename");
+                    console.log("Redireccionando a: documento/index.php?file=" + $(this).attr("filename"));
+                }
+                console.log($(this).attr("filetype"))
+                console.log($(this).attr("filename"))
+            })
+     
+        })
+    </script>
+    <style>
+        .item{width: 300px;height: 300px;padding: 5px; margin: 5px;
+        border: 2px solid black;border-radius: 5px;float: left;position: relative;}
+        .documentname{position: absolute;bottom: 5px;text-align: center;width: 100%;}
+        .iconfolder,.iconfile{width: 100%;margin: auto;}
+        .iconfolder img,.iconfile img{width: 25%;margin: auto;}
+        .item{
+            color:black; 
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <h3>Lista de documentos</h3>
+        <div id="carpetaactual"></div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

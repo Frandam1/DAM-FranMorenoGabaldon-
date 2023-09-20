@@ -1,0 +1,37 @@
+    $("#tipotexto").change(function(){
+        var selectedFormat = $(this).val();
+        var texto = "Texto de ejemplo"; // Texto inicial
+
+        switch (selectedFormat) {
+            case "p":
+                texto = "<p>" + texto + "</p>";
+                break;
+            case "h1":
+                texto = "<h1>" + texto + "</h1>";
+                break;
+            case "h2":
+                texto = "<h2>" + texto + "</h2>";
+                break;
+            case "h3":
+                texto = "<h3>" + texto + "</h3>";
+                break;
+            case "h4":
+                texto = "<h4>" + texto + "</h4>";
+                break;
+            case "h5":
+                texto = "<h5>" + texto + "</h5>";
+                break;
+            case "h6":
+                texto = "<h6>" + texto + "</h6>";
+                break;
+            case "pre":
+                texto = "<pre>" + texto + "</pre>";
+                break;
+            
+            default:
+                texto = texto; 
+        }
+
+        // Insertar el texto con el formato seleccionado en el elemento #pagina
+        $("#pagina").append(texto);
+    });
