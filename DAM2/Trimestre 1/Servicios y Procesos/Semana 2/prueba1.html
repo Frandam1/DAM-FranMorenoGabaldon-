@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Bordes (Operador de Sobel)</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Crear un elemento canvas para trabajar con gráficos -->
+    <canvas id="lienzo" width="2048" height="1722"></canvas>
+    <canvas id="lienzodestino" width="2048" height="1722"></canvas>
+    <script>
+        // Obtener el contexto 2D del canvas para dibujar en él
+        var contexto = document.getElementById("lienzo").getContext("2d");
+        var contextodestino = document.getElementById("lienzodestino").getContext("2d");
+
+        // Crear una nueva imagen
+        var foto = new Image();
+        foto.src = "prueba.jpg";
+
+        // Cuando la imagen se cargue completamente, aplicar el operador de Sobel
+        foto.onload = function () {
+            // Dibujar la imagen original en el lienzo principal
+            contexto.drawImage(foto, 0, 0);
+
+            // Obtener los datos de píxeles de la imagen original
+            var pixeles = contexto.getImageData(0, 0, 2048, 1722);
+
+            // Aplicar el operador de Sobel para detectar bordes
+            for (var x = 1; x < 2047; x++) {
+                for (var y = 1; y < 1721; y++) {
+                    var gx = (
+                        pixeles.data[((x - 1) + y * 2048) * 4] +
+                        pixeles.data[((x - 1) + (y - 1) * 2048) * 4] * 2 +
+                        pixeles.data[(x + (y - 1) * 2048) * 4] -
+                        pixeles.data[((x + 1) + y * 2048) * 4] -
+                        pixeles.data[((x + 1) + (y + 1) * 2048) * 4] * 2 -
+                        pixeles.data[(x + (y + 1) * 2048) * 4]
+                    );
+
+                    var gy = (
+                        pixeles.data[((x - 1) + (y + 1) * 2048) * 4] +
+                        pixeles.data[((x) + (y + 1) * 2048) * 4] * 2 +
+                        pixeles.data[((x + 1) + (y + 1) * 2048) * 4] -
+                        pixeles.data[((x - 1) + (y - 1) * 2048) * 4] -
+                        pixeles.data[((x) + (y - 1) * 2048) * 4] * 2 -
+                        pixeles.data[((x + 1) + (y - 1) * 2048) * 4]
+                    );
+
+                    var valor = Math.sqrt(gx * gx + gy * gy);
+
+                    // Aplicar el valor calculado como intensidad de gris
+                    pixeles.data[(x + y * 2048) * 4] = valor;
+                    pixeles.data[(x + y * 2048) * 4 + 1] = valor;
+                    pixeles.data[(x + y * 2048) * 4 + 2] = valor;
+                }
+            }
+
+            // Colocar los píxeles con bordes detectados en el lienzo de destino
+            contextodestino.putImageData(pixeles, 0, 0);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invertir Colores de Imagen</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Crear un elemento canvas para trabajar con gráficos -->
+    <canvas id="lienzo" width="2048" height="1722"></canvas>
+    <script>
+        const tiempoInicio = Date.now()
+
+        // Obtener el contexto 2D del canvas para dibujar en él
+        var contexto = document.getElementById("lienzo").getContext("2d");
+
+        // Crear una nueva imagen
+        var foto = new Image();
+        foto.src = "prueba.jpg";
+
+        // Cuando la imagen se cargue completamente, realizar la inversión de colores
+        foto.onload = function () {
+            // Dibujar la imagen original en el canvas
+            contexto.drawImage(foto, 0, 0);
+
+            // Obtener los datos de píxeles del canvas
+            var pixeles = contexto.getImageData(0, 0, 2048, 1722);
+
+            // Invertir los colores de los píxeles
+            for (var i = 0; i < pixeles.data.length; i += 4) {
+                pixeles.data[i] = 255 - pixeles.data[i];         // Invertir canal rojo
+                pixeles.data[i + 1] = 255 - pixeles.data[i + 1]; // Invertir canal verde
+                pixeles.data[i + 2] = 255 - pixeles.data[i + 2]; // Invertir canal azul
+            }
+
+            // Colocar los píxeles invertidos en el canvas
+            contexto.putImageData(pixeles, 0, 0);
+
+            const tiempoFinal = Date.now();
+
+            console.log("El programa a tardado en calcular " + (tiempoFinal - tiempoInicio))
+        };
+    </script>
+</body>
+
+</html>

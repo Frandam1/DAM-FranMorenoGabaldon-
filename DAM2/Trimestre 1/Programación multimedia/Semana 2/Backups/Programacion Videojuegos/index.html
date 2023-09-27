@@ -5,170 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Videojuego</title>
-    <style>
-        body {
-            margin: 0px;
-            padding: 0px;
-            overflow: hidden;
-        }
-
-        canvas {
-            border: 2px solid black;
-        }
-
-        #contenedor,
-        #fondo,
-        #lienzo {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            height: 100%;
-            width: 100%;
-        }
-
-        #fondo {
-            background: url(img/fondo2.jpg);
-            background-repeat: no-repeat;
-        }
-    </style>
+    <link rel="stylesheet" href="css/estilo.css">
 
 </head>
 
 <body>
     <div id="contenedor">
         <div id="fondo"></div>
-        <canvas id="lienzo" width="512px" height="512px"></canvas>
-
+        <canvas id="lienzo"></canvas>
     </div>
-
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="js/condicionesiniciales.js"></script>
+    <script src="js/bucle.js"></script>
+    <script src="js/funciones.js"></script>
+    <script src="js/inicio.js"></script>
+    <script src="js/Personaje.js"></script>
     <script>
-        var contexto = document.getElementById("lienzo").getContext("2d");
-
-        // Variables globales del programa
-        var temporizador;
-        var anchuranavegador = window.innerWidth;
-        var alturanavegador = window.innerHeight;
-        // Altura y anchuras dinamicas
-
-        document.getElementById("lienzo").height = alturanavegador;
-        document.getElementById("lienzo").width = anchuranavegador;
-        document.getElementById("fondo").height = alturanavegador;
-        document.getElementById("fondo").width = anchuranavegador;
-        document.getElementById("contenedor").height = alturanavegador;
-        document.getElementById("contenedor").width = anchuranavegador;
-
-
-        // Imagenes del videojuego 
-
-        //var imagenrejilla = new Image();
-        //imagenrejilla.src = "rejilla3.jpg"
-
-        var imgPersonaje1 = new Image();
-        imgPersonaje1.src = "img/pj.png"
-
-    
-
-
-        var numeropersonajes = 50;
-        var arraypersonajes = new Array();
-
-        //  PLantilla personaje(clase)
-        class Personaje {
-            //Creador
-            constructor(x, y, z, color, direccion, direccionisometrica, tiempovida) {
-                this.tiempovida = 0;
-                this.x = Math.random() * anchuranavegador;
-                this.y = Math.random() * alturanavegador;
-                this.direccion = Math.PI * 2 * Math.random();
-                this.direccionverdadera = Math.PI * 2 * Math.random();
-                this.direccionisometrica = Math.floor(Math.random() * 4);
-                this.color = "#ffcc66";
-
-            }
-            //Lo que puede hacer
-            mueve() {
-                //
-                this.tiempovida += 1;
-                this.x += Math.cos(this.direccion);
-                this.y += Math.sin(this.direccion);
-                this.direccion += Math.random() - 0.5;
-
-                // El pj cambia de direccion cada 100 ud desde su tiempovida
-                if (this.tiempovida % 100 == 0) { this.direccionisometrica = Math.floor(Math.random() * 4); }
-
-                if (this.direccionisometrica == 0) {
-                    this.direccion = 0;
-                } else if (this.direccionisometrica == 1) {
-                    this.direccion = Math.PI / 2;
-                } else if (this.direccionisometrica == 2) {
-                    this.direccion = Math.PI;
-                } else if (this.direccionisometrica == 3) {
-                    this.direccion = Math.PI * 1.5;
-                }
-
-                this.colisiona();
-            }
-            colisiona() {
-                if (this.x > anchuranavegador || this.x < 0 || this.y > alturanavegador || this.y < 0) {
-                    this.direccion += Math.PI;
-
-                }
-            }
-        }
-
-        function inicio() {
-    // Creamos una instancia sobre la que trabajar por cada uno de los objetos del array
-    for (var i = 0; i < numeropersonajes; i++) {
-        arraypersonajes[i] = new Personaje;
-    }
-
-    console.log("funcion inicio");
-    temporizador = setTimeout(bucle, 1000);
-
-}
-
-        function bucle() {
-
-            // Iteramos uno a uno y realizamos operaciones
-            contexto.clearRect(0,0,anchuranavegador,alturanavegador);
-            //contexto.drawImage(imagenrejilla,0,0);
-            //contexto.drawImage(imgFondo,0,0);
-            
-            for (var i = 0; i < numeropersonajes; i++) {
-                arraypersonajes[i].mueve();
-
-                contexto.drawImage(
-                    imgPersonaje1,
-                    0,
-                    0,
-                    128,
-                    128,
-                    isox(arraypersonajes[i].x, arraypersonajes[i].y),
-                    isoy(arraypersonajes[i].x, arraypersonajes[i].y), 40, 40,
-                );
-            }
-
-            clearTimeout(temporizador); //Eliminamos el temporizador del inicio
-            temporizador = setTimeout("bucle()", 33);//Creamos uno nuevo
-
-        }
-
-
-
-
         inicio();
-
-
-        function isox(x, y) {
-            return (x - y);
-        }
-        function isoy(x, y) {
-            return ((x + y) / 2);
-        }
-
     </script>
-
 </body>
-
 
 </html>

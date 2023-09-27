@@ -22,12 +22,29 @@ document.getElementById("contenedor").width = anchuranavegador;
 //imagenrejilla.src = "rejilla3.jpg"
 
 var imgPersonaje1 = new Image();
-imgPersonaje1.src = "img/pj.png"
+imgPersonaje1.src = "img/pj2.png"
 
-
-
+var imgPersonaje = new Image();
+imgPersonaje.src = "img/prota.png"
 
 var numeropersonajes = 50;
 var arraypersonajes = new Array();
+
+//Propiedades prota
+
+var posx = 800;
+var posy =-60;
+var estadoanim = 0;
+var angulo = 0;
+var velocidad = 10;
+var direccion= 0;
+
+// Delimitacion de terreno
+
+var terrenox1 = 600;
+var terrenoy1 = -400;
+var terrenox2 = 1400;
+var terrenoy2 = 450; 
+
 
 

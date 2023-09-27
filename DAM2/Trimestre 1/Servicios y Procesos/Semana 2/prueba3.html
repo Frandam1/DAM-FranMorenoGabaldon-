@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector y Cambiador de Colores en Imagen</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        canvas {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Crear elementos canvas para trabajar con gráficos -->
+    <canvas id="lienzoOriginal" width="2048" height="1722"></canvas>
+    <canvas id="lienzoModificado" width="2048" height="1722"></canvas>
+    <script>
+        // Obtener los contextos 2D de los canvas para dibujar en ellos
+        var contextoOriginal = document.getElementById("lienzoOriginal").getContext("2d");
+        var contextoModificado = document.getElementById("lienzoModificado").getContext("2d");
+
+        // Crear una nueva imagen
+        var foto = new Image();
+        foto.src = "prueba.jpg";
+
+        // Cuando la imagen se cargue completamente, detectar colores y cambiar píxeles
+        foto.onload = function () {
+            // Dibujar la imagen original en el lienzo original
+            contextoOriginal.drawImage(foto, 0, 0);
+
+            // Crear una copia de la imagen original
+            var copiaFoto = new Image();
+            copiaFoto.src = foto.src;
+
+            // Dibujar la copia de la imagen en el lienzo modificado (para comparar)
+            copiaFoto.onload = function () {
+                contextoModificado.drawImage(copiaFoto, 0, 0);
+            };
+
+            // Obtener los datos de píxeles de la imagen original
+            var pixelesOriginal = contextoOriginal.getImageData(0, 0, 2048, 1722);
+
+            // Definir el tamaño del paso para analizar colores (cada 10 píxeles en este ejemplo)
+            var paso = 100;
+
+            // Inicializar un objeto para almacenar los colores detectados
+            var coloresDetectados = {};
+
+            // Iterar a través de los píxeles y detectar colores
+            for (var x = 0; x < 2048; x += paso) {
+                for (var y = 0; y < 1722; y += paso) {
+                    // Obtener el valor RGB del píxel en la posición (x, y)
+                    var r = pixelesOriginal.data[(x + y * 2048) * 4];
+                    var g = pixelesOriginal.data[(x + y * 2048) * 4 + 1];
+                    var b = pixelesOriginal.data[(x + y * 2048) * 4 + 2];
+
+                    // Crear una cadena de texto que representa el color
+                    var color = "rgb(" + r + ", " + g + ", " + b + ")";
+
+                    // Almacenar el color en el objeto coloresDetectados
+                    if (!coloresDetectados[color]) {
+                        coloresDetectados[color] = 1;
+                        
+                        // Cambiar el píxel a un color aleatorio en la imagen modificada
+                        var randomR = Math.floor(Math.random() * 256);
+                        var randomG = Math.floor(Math.random() * 256);
+                        var randomB = Math.floor(Math.random() * 256);
+                        pixelesOriginal.data[(x + y * 2048) * 4] = randomR;
+                        pixelesOriginal.data[(x + y * 2048) * 4 + 1] = randomG;
+                        pixelesOriginal.data[(x + y * 2048) * 4 + 2] = randomB;
+                    }
+                }
+            }
+
+            // Colocar los píxeles modificados en el lienzo modificado
+            contextoModificado.putImageData(pixelesOriginal, 0, 0);
+
+            // Mostrar los colores detectados en la consola
+            console.log("Colores detectados en la imagen:");
+            for (var color in coloresDetectados) {
+                if (coloresDetectados.hasOwnProperty(color)) {
+                    console.log(color + ": " + coloresDetectados[color] + " píxeles");
+                }
+            }
+        };
+    </script>
+</body>
+</html>
