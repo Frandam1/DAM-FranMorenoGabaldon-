@@ -1,0 +1,215 @@
+<?xml
+   version = "1.0"
+   encoding = "UTF-8"
+   standalone = "no"
+?>
+
+<category>Value properties
+
+    <instruction> inglobalThis</instruction>
+    <instruction>Infinity</instruction>
+    <instruction>NaN</instruction>
+    <instruction>undefined</instruction>
+</category>
+<category>Function properties
+
+<instruction>eval()</instruction>
+<instruction>isFinite()</instruction>
+<instruction>isNaN()</instruction>
+<instruction>parseFloat()</instruction>
+<instruction>parseInt()</instruction>
+<instruction>decodeURI()</instruction>
+<instruction>decodeURIComponent()</instruction>
+<instruction>encodeURI()</instruction>
+<instruction>encodeURIComponent()</instruction>
+<instruction>escape() Deprecated</instruction>
+<instruction>unescape() </instruction>
+</category>
+<category>Fundamental objects
+
+<instruction>Object</instruction>
+<instruction>Function</instruction>
+<instruction>Boolean</instruction>
+<instruction>Symbol</instruction>
+</category>
+<category>Error objects
+
+<instruction>Error</instruction>
+<instruction>AggregateError</instruction>
+<instruction>EvalError</instruction>
+<instruction>RangeError</instruction>
+<instruction>ReferenceError</instruction>
+<instruction>SyntaxError</instruction>
+<instruction>TypeError</instruction>
+<instruction>URIError</instruction>
+<instruction>InternalError </instruction>
+</category>
+<category>   Indexed collections
+
+<instruction>Array</instruction>
+<instruction>Int8Array</instruction>
+<instruction>Uint8Array</instruction>
+<instruction>Uint8ClampedArray</instruction>
+<instruction>Int16Array</instruction>
+<instruction>Uint16Array</instruction>
+<instruction>Int32Array</instruction>
+<instruction>Uint32Array</instruction>
+<instruction>BigInt64Array</instruction>
+<instruction>BigUint64Array</instruction>
+<instruction>Float32Array</instruction>
+<instruction>Float64Array</instruction>
+</category>
+<category>Keyed collections
+
+<instruction>  Map</instruction>
+<instruction>  Set</instruction>
+<instruction> WeakMap</instruction>
+<instruction>  WeakSet</instruction>
+</category>
+<category>Structured data
+
+<instruction>  ArrayBuffer</instruction>
+<instruction>  SharedArrayBuffer</instruction>
+<instruction> DataView</instruction>
+<instruction>  Atomics</instruction>
+<instruction>  JSON</instruction>
+</category>
+<category>Managing memory
+
+<instruction>   WeakRef</instruction>
+<instruction>  FinalizationRegistry</instruction>
+
+<instruction>  Control abstraction objects</instruction>
+
+<instruction>   Iterator</instruction>
+<instruction>   AsyncIterator</instruction>
+<instruction>   Promise</instruction>
+<instruction>  GeneratorFunction</instruction>
+<instruction>  AsyncGeneratorFunction</instruction>
+<instruction>  Generator</instruction>
+<instruction>  AsyncGenerator</instruction>
+<instruction>  AsyncFunction</instruction>
+</category>
+<category>Reflection
+
+<instruction>   Reflect</instruction>
+<instruction>   Proxy</instruction>
+
+</category>
+<category>  Control flow
+
+<instruction>  return</instruction>
+<instruction>   break</instruction>
+<instruction>   continue</instruction>
+<instruction>  throw</instruction>
+<instruction>   if...else</instruction>
+<instruction>  switch</instruction>
+<instruction>   try...catch</instruction>
+</category>
+<category>Declaring variables
+
+<instruction>   var</instruction>
+<instruction>   let</instruction>
+<instruction>   const</instruction>
+</category>
+<category>Functions and classes
+
+<instruction>    function</instruction>
+<instruction>   function*</instruction>
+<instruction>   async function</instruction>
+<instruction>  async function*</instruction>
+<instruction>  class</instruction>
+</category>
+<category>Iterations
+
+<instruction>  do...while</instruction>
+<instruction>  for</instruction>
+<instruction>   for...in</instruction>
+<instruction>    for...of</instruction>
+<instruction>   for await...of</instruction>
+<instruction>    while</instruction>
+
+    Others
+</category>
+<category>Primary expressions
+
+<instruction>   this</instruction>
+<instruction>   Literals</instruction>
+<instruction>    []</instruction>
+<instruction>   {}</instruction>
+<instruction>    function</instruction>
+<instruction>    class</instruction>
+<instruction>   function*</instruction>
+<instruction>    async function</instruction>
+<instruction>    async function*</instruction>
+<instruction>    /ab+c/i</instruction>
+<instruction>    `string`</instruction>
+<instruction>    ( )</instruction>v
+</category>
+<category>Left-hand-side expressions
+
+<instruction>    Property accessors
+    <instruction>  ?.
+        <instruction>   new
+            <instruction>   new.target
+                <instruction>    import.meta
+                    <instruction>  super
+                        <instruction>   import()
+                        </category>
+                        <category>Increment and decrement
+
+                            <instruction> A++</instruction>
+                            <instruction> A--</instruction>
+                            <instruction>  ++A</instruction>
+
+                        </category>
+                        <category>Increment and decrement
+
+                            <instruction>  A++</instruction>
+                            <instruction>  A--</instruction>
+                            <instruction>  ++A</instruction>
+                            <instruction>   --A</instruction>
+                        </category>
+                        <category>Unary operators
+
+                            <instruction>  delete</instruction>
+                            <instruction>  void</instruction>
+                            <instruction> typeof</instruction>
+                            <instruction>  +</instruction>
+                            <instruction>  -</instruction>
+
+                            <instruction>    !</instruction>
+                            <instruction>  await</instruction>
+                        </category>
+                    </instruction>
+                    <category>Arithmetic operators
+
+                        <instruction> **</instruction>
+                        <instruction>  *</instruction>
+                        <instruction>  /</instruction>
+                        <instruction>   %</instruction>
+                        <instruction>   + (Plus)</instruction>
+                        <instruction>  -</instruction>
+                    </category>
+                    <category>Relational operators
+
+                        <instruction>
+                                    (Less than)</instruction>
+                        <instruction>  (Greater than)</instruction>
+                        <instruction>
+                            <=</instruction>
+                                <instruction>  >=
+                                    <instruction>   instanceof</instruction>
+                                    <instruction>  in</instruction>
+                                </category>
+                                <category>Equality operators
+
+                                    <instruction>  ==</instruction>
+                                    <instruction>   !=</instruction>
+                                    <instruction>  ===</instruction>
+                                    <instruction>  !==</instruction>
+
+                                </category>
+
+
+

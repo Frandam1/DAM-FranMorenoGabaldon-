@@ -1,0 +1,91 @@
+body {
+    background: 240, 240, 240;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align:justify;
+}
+
+header {
+    width: 800px;
+    background: rgb(11, 155, 184);
+    margin: auto;
+    height: 100px;
+    padding: 20px;
+    color: white;
+}
+
+main {
+    width: 800px;
+    background: white;
+    margin: auto;
+    height: 400px;
+    padding: 20px;
+}
+
+footer {
+    width: 800px;
+    background: white;
+    margin: auto;
+    height: 100px;
+    padding: 20px;
+}
+h1, h2{
+    padding: 0px;
+    margin: 0px;
+}
+nav ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+nav ul li{
+    float: left;
+    padding: 5px;
+    margin: 1px;
+    background: darkblue;
+    color: aliceblue;
+    width: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: inherit;
+}
+nav ul li:first-child{border-radius: 10%, 0px, 0px, 310%;}
+nav ul li:last-child{border-radius: 0px, 10%, 10%, 0px;}
+
+
+
+/*------Pagina de INICIO---------*/
+#banner {
+    width: 100%;
+    height: 200px;
+    background: rgb(200, 200, 200);
+}
+
+article {
+    width: 33%;
+    float: left;
+}
+article p{
+    padding: 10px;
+    text-align: justify;
+}
+#banner p{
+    padding: 20px;
+}
+#banner h3{
+    padding: 20px;
+}
+
+/*------Pagina de BLOG---------*/
+
+#contienearticulos{
+    width: 65%;
+    float: left;
+}
+aside{
+    width: 30%;
+    float: right;
+}

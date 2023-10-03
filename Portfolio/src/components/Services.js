@@ -19,7 +19,7 @@ const services = [
     link: 'Certificado',
   },
   {
-    name: 'Gestión de la seguridad informática de la empresa',
+    name: 'Excel aplicado a la negociación empresarial',
     description: `Fórmate || S.E.P.E. || 90 horas`,
     link: 'Cursando',
   },

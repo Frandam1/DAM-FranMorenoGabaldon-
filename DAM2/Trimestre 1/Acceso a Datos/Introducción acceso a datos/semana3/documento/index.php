@@ -1,3 +1,5 @@
+
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,8 +11,6 @@
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="miestilo.css">
     <script src="script.js"></script>
-
-    <!-- Agregar los estilos de Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
@@ -54,6 +54,12 @@
                             <option value="Garamond">Garamond</option>
                         </select>
                         <input type="number" id="fontsize" class="form-control" value="10">
+
+                        
+                            <div type="text" id="contador" class="form-control" readonly></div>
+                           
+                        
+
                         <button id="bold" class="btn btn-secondary"><img
                                 src="../img/bootstrap-icons-1.11.0/type-bold.svg" class="icon"></button>
                         <button id="cursive" class="btn btn-secondary"><img
@@ -89,13 +95,22 @@
                 <td id="fondopagina">
                     <div id="pagina" contenteditable="true">
                         <?php
-                        include "../vault/users/fran/" . $_GET['file'];
+                        include "../vault/users/".$_SESSION['user']."/" . $_GET['file'];
                         ?>
                     </div>
                 </td>
             </tr>
         </table>
         <script>
+            var pagina = document.getElementById("pagina");
+            var contador = document.getElementById("contador");
+            pagina.addEventListener("input", function () {
+
+                var contenido = pagina.innerText;
+                var palabras = contenido.split(/\s+/);
+                var numPalabras = palabras.length;
+                contador.textContent = "Palabras: " + numPalabras;
+            });
             $("#orderedlist").click(function () {
                 $("#pagina").append("<ol><li></li></ol>");
             });
@@ -117,5 +132,6 @@
         </script>
     </div>
 </body>
+
 
 </html>
