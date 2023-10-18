@@ -71,6 +71,8 @@ for i in range(0,10):
         notas.append(Nota(entrada,color,fecha))
         print("Nueva nota introducida")
         
+
+        
 print("Sacamos el contenido de todas las notas")
 for i in notas:
     print(i.texto)
@@ -78,4 +80,29 @@ for i in notas:
     print(i.fecha)
     
     cursor.execute("INSERT INTO notas VALUES (NULL,'"+i.texto+"','"+i.color+"','"+i.fecha+"');")
-    conexion.commit()    
+    conexion.commit()  
+    
+def eliminar_nota(notas):
+    if not notas:
+        print("No hay notas para eliminar.")
+        return
+
+    print("Lista de notas:")
+    for i, nota in enumerate(notas):
+        print(f"{i + 1}: {nota.texto}")
+
+    try:
+        opcion = int(input("Ingrese el número de la nota que desea eliminar (o 0 para cancelar): "))
+        if opcion == 0:
+            print("Operación de eliminación cancelada.")
+            return
+
+        if 1 <= opcion <= len(notas):
+            nota_eliminada = notas.pop(opcion - 1)
+            print(f"La nota '{nota_eliminada.texto}' ha sido eliminada.")
+        else:
+            print("Opción no válida. Debe seleccionar un número de nota válido.")
+    except ValueError:
+        print("Opción no válida. Debe ingresar un número.")
+        
+eliminar_nota(notas)  
