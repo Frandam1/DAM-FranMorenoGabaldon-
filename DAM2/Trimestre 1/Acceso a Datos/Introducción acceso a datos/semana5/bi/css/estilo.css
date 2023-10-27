@@ -1,0 +1,71 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #b4b2b2;
+    margin: 0;
+    padding: 0;
+}
+
+#contenedor {
+   
+    padding: 20px;
+    background-color: #fff;
+    border: 3px solid #1e1c1c;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#selecciontabla, #seleccioncampos {
+    margin-bottom: 20px;
+}
+
+select {
+    width: 75%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+p {
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+table th{
+    background: grey;
+    color: white;
+}
+#sql{
+    background: black;
+    color: white;
+    padding: 20px;
+    font-family: monospace;
+}
+#seleccionacampos{
+    columns: 3;
+    padding: 20px;
+}
+input[type="checkbox"]{
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+table th{
+    background: grey;
+    color:white;
+}
+table tr:nth-child{
+    background:rbg(230,230,230);
+}
+table tr td{
+    padding: 10px;
+}
+    
+
