@@ -1,0 +1,39 @@
+Intento de inyección SQL en el campo: url
+Valor ingresado: https://youtu.be/D6Ay4-miEnI?drop
+Intento de inyección SQL en el campo: url
+Valor ingresado: https://youtu.be/D6Ay4-miEnI?drop
+Dirección IP del infractor: 127.0.0.1
+Intento de inyección SQL en el campo: url
+Valor ingresado: https://youtu.be/D6Ay4-miEnI?drop
+Dirección IP del infractor: 127.0.0.1
+Navegador del infractor: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0
+Fecha del intento: 2023-10-16 02:22:26
+Intento de inyección SQL en el campo: url
+Valor ingresado: https://youtu.be/D6Ay4-miEnI?drop
+Dirección IP del infractor: 127.0.0.1
+Navegador del infractor: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0
+Fecha del intento: 2023-10-16 02:22:28
+Intento de inyección SQL en el campo: url
+Valor ingresado: https://youtu.be/D6Ay4-miEnI?drop
+Dirección IP del infractor: 127.0.0.1
+Navegador del infractor: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0
+Fecha del intento: 2023-10-16 02:23:20
+
+Intento de inyección SQL en el campo: url
+Valor ingresado: https://youtu.be/D6Ay4-miEnI?drop
+Dirección IP del infractor: 127.0.0.1
+Navegador del infractor: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0
+Fecha del intento: 2023-10-16 02:25:25
+
+Intento de inyección SQL en el campo: drop
+Valor ingresado: drop
+Dirección IP del infractor: 127.0.0.1
+Navegador del infractor: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0
+Fecha del intento: 2023-10-29 17:11:24
+
+Intento de inyección SQL en el campo: drop
+Valor ingresado: drop
+Dirección IP del infractor: 127.0.0.1
+Navegador del infractor: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0
+Fecha del intento: 2023-10-29 17:12:54
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Juego Vida</title>
+    <style>
+        html, body {
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+        canvas {
+            border: 2px black solid;
+            image-rendering: optimizeSpeed;
+            image-rendering: -moz-crisp-edges;
+        }
+        body {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="lienzo"></canvas>
+    <script>
+        var anchura = window.innerWidth;
+        var altura = window.innerHeight;
+        var canvas = document.getElementById("lienzo");
+        canvas.width = anchura;
+        canvas.height = altura;
+        var contexto = canvas.getContext("2d");
+
+        // Carga inicial de celdas vivas y muertas
+        var datoscanvas = contexto.getImageData(0, 0, anchura, altura);
+        for (var i = 0; i < datoscanvas.data.length; i += 4) {
+            if (Math.random() < 0.2) {
+                datoscanvas.data[i] = 0;
+                datoscanvas.data[i + 1] = 0;
+                datoscanvas.data[i + 2] = 0;
+            } else {
+                datoscanvas.data[i] = 255;
+                datoscanvas.data[i + 2] = 255;
+                datoscanvas.data[i + 3] = 255;
+            }
+        }
+        contexto.putImageData(datoscanvas, 0, 0);
+
+        // Crear trabajadores
+        var numeroworkers = window.navigator.hardwareConcurrency * 5;
+        var trabajadores = [];
+
+        for (var i = 0; i < numeroworkers; i++) {
+            var worker = new Worker("trabajador.js");
+            trabajadores.push(worker);
+
+            // Inicializar trabajador
+            worker.postMessage({ action: "init", canvasWidth: anchura, canvasHeight: altura });
+
+            // Escuchar mensajes de los trabajadores
+            worker.onmessage = function (event) {
+                var message = event.data;
+                if (message.action === "updateCell") {
+                    // Actualizar el canvas principal con los resultados de los trabajadores
+                    contexto.fillStyle = message.cellAlive ? "black" : "white";
+                    contexto.fillRect(message.x, message.y, 1, 1);
+
+                    // Enviar una nueva celda para procesar al trabajador
+                    var randomX = Math.floor(Math.random() * anchura);
+                    var randomY = Math.floor(Math.random() * altura);
+                    worker.postMessage({ action: "processCell", x: randomX, y: randomY });
+                }
+            };
+        }
+    </script>
+</body>
+</html>

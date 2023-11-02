@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Juego Vida</title>
+    <style>
+        canvas{
+            border: 2px black solid;
+        }
+        body{
+            background-color: darkgray;
+        }
+        #estado{
+            position: absolute;top: 0px;left: 0px;background: black;
+        }
+        #estado2{
+            position: absolute;top: 0px;left: 0px;
+        }
+        #contieneestado{
+            position: absolute;top: 0px;left: 0px;width: 64px;height: 32px;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="512px" height="512px" id="lienzo"></canvas>
+    <div id="contieneestado">
+        <canvas width="64" height="32" id="estado">a</canvas>
+        <canvas width="64" height="32" id="estado2"></canvas>
+    </div>
+    <script>
+        var anchura = window.innerWidth;
+        var altura = window.innerHeight;
+
+        document.getElementById('lienzo').width = anchura;
+        document.getElementById("lienzo").height = altura;
+
+        var contexto = document.getElementById("lienzo").getContext("2d");
+        // Carga inicial pix negros
+        contexto.fillStyle = "rgb(255,255,255)";
+        contexto.fillRect(0,0,anchura,altura);
+        var datoscanvas = contexto.getImageData(0,0,anchura,altura);
+        var pixel = new Array();
+        
+        for(var i = 0; i<anchura*altura;i++){
+            if(Math.random()< 0.1){
+                pixel.push(1)
+            }else{
+                pixel.push(0)
+            }
+        }
+        console.log(pixel)
+        contexto.putImageData(datoscanvas,0,0)
+        var temporizador = setTimeout("bucle()",1);
+        contextoestado = document.getElementById("estado").getContext("2d")
+        contextoestado2 = document.getElementById("estado2").getContext("2d")
+        contextoestado.font = "12px Arial";
+        contextoestado.fillStyle = 'black';
+        contextoestado.fillRect(0,0,64,32)
+
+        estadohistoria = new Array();
+
+        var estadotiempoinicio = 0;
+        var estadotiempofinal = 0;
+
+        function bucle(){
+            estadotiempoinicio = Date.now();
+            var pixeltemp = pixel.slice();
+
+            for(var i = 0; i<pixel.length;i++){
+                
+                var numerovivas = 0;
+
+                numerovivas += pixeltemp[i-anchura-1];
+                numerovivas += pixeltemp[i-anchura];
+                numerovivas += pixeltemp[i-anchura+1];
+                numerovivas += pixeltemp[i-1];
+                numerovivas += pixeltemp[i+1];
+                numerovivas += pixeltemp[i+anchura-1];
+                numerovivas += pixeltemp[i+anchura];
+                numerovivas += pixeltemp[i+anchura+1];
+
+                if(pixel[i] == 0 && numerovivas == 3){pixel[i] = 1;}
+                if(pixel[i] == 1 && (numerovivas == 2 || numerovivas == 3)){
+                    pixel[i] = 1
+                }else {
+                    pixel[i] = 0;
+                }
+                datoscanvas.data[i*4] = 255-pixel[i]*255;
+                datoscanvas.data[i*4+1] = 255-pixel[i]*255;
+                datoscanvas.data[i*4+2] = 255-pixel[i]*255;
+                datoscanvas.data[i*4+3] = 255
+
+            }
+            contexto.putImageData(datoscanvas,0,0)
+            estadotiempofinal = Date.now();
+
+            var fps = Math.round(1000/(estadotiempofinal-estadotiempoinicio));
+            
+
+            
+          
+            if(fps >= 50){contextoestado.fillStyle='green'}
+            if(fps < 50){contextoestado.fillStyle='blue'}
+            if(fps < 45){contextoestado.fillStyle='red'}
+            
+            contextoestado.fillRect(62,30,1,0-fps/5)
+
+            var datos = contextoestado.getImageData(2,1,64,30)
+            contextoestado.putImageData(datos,1,1)
+            contextoestado2.clearRect(0,0,64,32)
+            contextoestado2.fillStyle='white'
+            contextoestado2.fillText(fps+"fps",3,25)
+            console.log(fps)
+
+            clearTimeout(temporizador);
+            var temporizador = setTimeout("bucle()",0);
+        }
+
+    </script>
+    <!-- http://localhost/servicios-Procesos/semana6/index4.html -->
+</body>
+</html>
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videojuego</title>
+    <style>
+        canvas {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="lienzo"></canvas>
+    <script>
+        // Creamos un contexto capturando el lienzo
+        var contexto = document.getElementById("lienzo").getContext("2d");
+
+        // Variables globales del programa
+
+        var temporizador;
+        var anchuranavegador = window.innerWidth;
+        var alturanavegador = window.innerHeight;
+        document.getElementById("lienzo").height = alturanavegador;
+        document.getElementById("lienzo").width = anchuranavegador;
+
+        var x, y; // Define las variables x e y en el alcance global
+
+    
+
+        // Plantilla personaje (clase)
+        class Personaje {
+            // Creador
+            constructor(x, y, z, color,direccion) {
+                this.x = Math.random() * anchuranavegador;
+                this.y = Math.random() * alturanavegador;
+                this.direccion = Math.PI*2*Math.random();
+                this.color = "#ffcc66";
+            }
+            // Lo que puede hacer
+            mueve() {
+                this.x += Math.cos(this.direccion);
+                this.y += Math.sin(this.direccion);
+                this.direccion += Math.random()-0.5;
+                this.colisiona();
+            }
+            colisiona(){
+                if(this.x > anchuranavegador || this.x < 0 || this.y > alturanavegador || this.y < 0){
+                    this.direccion += Math.PI;
+                    
+                }
+            }
+        }
+        var numeropersonajes = 50;
+        var arraypersonajes = new Array();
+
+        inicio();
+
+        // Condiciones iniciales del juego
+        function inicio() {
+            for (var i = 0; i < numeropersonajes; i++) {
+                arraypersonajes[i] = new Personaje;
+            }
+
+            console.log("funcion inicio");
+            temporizador = setTimeout(bucle, 1000);
+        }
+
+        // Bucle principal del juego
+        function bucle() {
+            // Borramos el lienzo anterior cada vez que iniciamos un bucle
+            contexto.clearRect(0, 0, anchuranavegador, alturanavegador);
+
+            for (var i = 0; i < numeropersonajes; i++) {
+                arraypersonajes[i].mueve();
+
+                // Dibuja círculos en el color correspondiente
+                contexto.beginPath();
+                contexto.arc(arraypersonajes[i].x, arraypersonajes[i].y, 22, 0, 2 * Math.PI);
+                contexto.fillStyle = arraypersonajes[i].color;
+                contexto.fill();
+            }
+
+            clearTimeout(temporizador); // Eliminamos el temporizador actual
+            temporizador = setTimeout(bucle, 33); // Creamos uno nuevo
+            console.log("Soy el bucle");
+        }
+
+        // Funciones adicionales
+        document.getElementById("lienzo").addEventListener("click", function (event) {
+            var clickX = event.clientX - this.getBoundingClientRect().left;
+            var clickY = event.clientY - this.getBoundingClientRect().top;
+
+            for (var i = 0; i < numeropersonajes; i++) {
+                var personaje = arraypersonajes[i];
+                // Calculamos el cuadrado de x e y, y luego su raiz cuadrada para la distancia euclidiana entre dos puntos
+                var distancia = Math.sqrt(Math.pow(clickX - personaje.x, 2) + Math.pow(clickY - personaje.y, 2));
+
+                // Si se hizo clic en un personaje (dentro del radio del personaje)
+                if (distancia <= 22) {
+                    // Alternar entre colores (rojo y el color original)
+                    if (personaje.color === "red") {
+                        personaje.color = "#ffcc66"; // Cambia de rojo a color original
+                    } else {
+                        personaje.color = "red"; // Cambia de color original a rojo
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
