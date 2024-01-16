@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Colores en Imagen</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Crear un elemento canvas para trabajar con gráficos -->
+    <canvas id="lienzo" width="2048" height="1722"></canvas>
+    <script>
+        // Obtener el contexto 2D del canvas para dibujar en él
+        var contexto = document.getElementById("lienzo").getContext("2d");
+
+        // Crear una nueva imagen
+        var foto = new Image();
+        foto.src = "prueba.jpg";
+
+        // Cuando la imagen se cargue completamente, detectar colores
+        foto.onload = function () {
+            // Dibujar la imagen original en el lienzo principal
+            contexto.drawImage(foto, 0, 0);
+
+            // Obtener los datos de píxeles de la imagen original
+            var pixeles = contexto.getImageData(0, 0, 2048, 1722);
+
+            // Definir el tamaño del paso para analizar colores (cada 10 píxeles en este ejemplo)
+            var paso = 100;
+
+            // Inicializar un objeto para almacenar los colores detectados
+            var coloresDetectados = {};
+
+            // Iterar a través de los píxeles y detectar colores
+            for (var x = 0; x < 2048; x += paso) {
+                for (var y = 0; y < 1722; y += paso) {
+                    // Obtener el valor RGB del píxel en la posición (x, y)
+                    var r = pixeles.data[(x + y * 2048) * 4];
+                    var g = pixeles.data[(x + y * 2048) * 4 + 1];
+                    var b = pixeles.data[(x + y * 2048) * 4 + 2];
+
+                    // Crear una cadena de texto que representa el color
+                    var color = "rgb(" + r + ", " + g + ", " + b + ")";
+
+                    // Almacenar el color en el objeto coloresDetectados
+                    if (!coloresDetectados[color]) {
+                        coloresDetectados[color] = 1;
+                    } else {
+                        coloresDetectados[color]++;
+                    }
+                }
+            }
+
+            // Mostrar los colores detectados en la consola
+            console.log("Colores detectados en la imagen:");
+            for (var color in coloresDetectados) {
+                if (coloresDetectados.hasOwnProperty(color)) {
+                    console.log(color + ": " + coloresDetectados[color] + " píxeles");
+                }
+            }
+        };
+    </script>
+</body>
+</html>

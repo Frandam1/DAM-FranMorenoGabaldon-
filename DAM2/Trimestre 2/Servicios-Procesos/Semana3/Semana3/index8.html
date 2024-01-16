@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <canvas id="lienzo" height="512px" width="512px"></canvas>
+
+    <script>
+        var numerotrabajadores = 250;
+
+        var trabajadores = new Array();
+        var personajes = new Array();
+
+        var contexto = document.getElementById("lienzo").getContext("2d")
+        var temporizador;
+
+        for (var i = 0; i < numerotrabajadores; i++) {
+            trabajadores[i] = new Worker("tarea8.js");
+
+            trabajadores[i].postMessage({id:i})
+            personajes[i] = {x:0,y:0,r:0,g:0,b:0,otros:0,id:i}
+
+            trabajadores[i].onmessage = function(datos){
+                personajes[datos.data.id].x = datos.data.x
+                personajes[datos.data.id].y = datos.data.y
+                personajes[datos.data.id].r = datos.data.mir
+                personajes[datos.data.id].g = datos.data.mig
+                personajes[datos.data.id].b = datos.data.mib
+                personajes[datos.data.id].tam = datos.data.tam
+            }
+        }
+        inicio();
+        function inicio() {
+            temporizador = setTimeout("bucle()", 1000)
+        }
+        function bucle() {
+            contexto.fillStyle = "rgba(255,255,255,0.1)"
+            contexto.fillRect(0,0,512,512)
+            for (var i = 0; i < numerotrabajadores; i++) {
+                contexto.fillStyle = "rgb("+personajes[i].r+","+personajes[i].g+","+personajes[i].b+")"
+                contexto.fillRect(personajes[i].x,personajes[i].y,personajes[i].tam,personajes[i].tam)
+                trabajadores[i].postMessage({id:i,otros:personajes})
+        }
+
+            clearTimeout(temporizador)
+            temporizador = setTimeout("bucle()", 33)
+        }
+    </script>
+
+</body>
+
+</html>

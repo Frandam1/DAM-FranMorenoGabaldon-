@@ -157,105 +157,75 @@ function dibujaterreno() {
                 }
                 break;
 
+            case cg === 75:
 
-
-            // Puedes agregar más casos según tus necesidades
-            // case ca === otroValor:
-            //    // Otra lógica aquí
-            //    break;
+                {
+                    contextofondo.drawImage(
+                        bloquearquitectura1,
+                        isox(x * anchurabloque, y * anchurabloque) + desfasex,
+                        isoy(x * anchurabloque, y * anchurabloque) + desfasey - pixeles.data[i],
+                        anchuradibujo,
+                        anchuradibujo
+                    );
+                }
+                break;
 
 
         }
 
+        /*var array = contextomapaarquitectura.getImageData(x,y,1,1).data
+        if(cb == 255){
+            console.log("Pintoooo")
+            contextofondo.drawImage(
+                
+                bloquearquitectura1,
+                isox(x*anchurabloque,y*anchurabloque)+desfasex,
+                isoy(x*anchurabloque,y*anchurabloque)+desfasey-pixeles.data[i]*alturabloquez,
+                anchuradibujo,
+                anchuradibujo
+            )
+        }*/
 
-        /*if (ca == 255) {
-            //console.log("Estos es una parte del terreno");
-            //console.log(x+","+y);
-            if (
-                isox(x * anchurabloque, y * anchurabloque) + desfasex > -100
-                &&
-                isox(x * anchurabloque, y * anchurabloque) + desfasex < anchuranavegador
-                &&
-                isoy(x * anchurabloque, y * anchurabloque) + desfasey > -100
-                &&
-                isoy(x * anchurabloque, y * anchurabloque) + desfasey < alturanavegador
 
-            ) {
-                
-                contextofondo.drawImage(bloque9,
-                    isox(x*anchurabloque,y*anchurabloque)+desfasex,
-                    isoy(x*anchurabloque,y*anchurabloque)+desfasey-pixeles.data[i]*alturabloquez,
-                    anchuradibujo,anchuradibujo
-                    );
-                
-                
-                
-                
-                /*
-                /////////////////////////////////////// Nuevo 2EV
-                var array = contextomapacolores.getImageData(x, y, 1, 1).data
 
-                if (array[0] == 42 && array[1] == 42 && array[2] == 42) {
-                    contextofondo.drawImage(
-                        bloqueasfalto,
-                        isox(x * anchurabloque, y * anchurabloque) + desfasex,
-                        isoy(x * anchurabloque, y * anchurabloque) + desfasey - pixeles.data[i] * alturabloquez,
-                        anchuradibujo,
-                        anchuradibujo
-                    );
-                }
-                if (array[0] == 67 && array[1] == 66 && array[2] == 66) {
-                    contextofondo.drawImage(
-                        bloqueacera,
-                        isox(x * anchurabloque, y * anchurabloque) + desfasex,
-                        isoy(x * anchurabloque, y * anchurabloque) + desfasey - pixeles.data[i] * alturabloquez,
-                        anchuradibujo,
-                        anchuradibujo
-                    );
-                }
-                if (array[0] == 90 && array[1] == 90 && array[2] == 90) {
-                    contextofondo.drawImage(
-                        bloquepavimento,
-                        isox(x * anchurabloque, y * anchurabloque) + desfasex,
-                        isoy(x * anchurabloque, y * anchurabloque) + desfasey - pixeles.data[i] * alturabloquez,
-                        anchuradibujo,
-                        anchuradibujo
-                    );
-                }
-                if (array[0] == 138 && array[1] == 138 && array[2] == 138) {
-                    contextofondo.drawImage(
-                        bloquepavimentocasa,
-                        isox(x * anchurabloque, y * anchurabloque) + desfasex,
-                        isoy(x * anchurabloque, y * anchurabloque) + desfasey - pixeles.data[i] * alturabloquez,
-                        anchuradibujo,
-                        anchuradibujo
-                    );
-                }
-                if (array[0] == 65 && array[1] == 96 && array[2] == 54) {
-                    contextofondo.drawImage(
-                        bloquejardin,
-                        isox(x * anchurabloque, y * anchurabloque) + desfasex,
-                        isoy(x * anchurabloque, y * anchurabloque) + desfasey - pixeles.data[i] * alturabloquez,
-                        anchuradibujo,
-                        anchuradibujo
-                    );
-                }
-                if (array[0] == 111 && array[1] == 133 && array[2] == 104) {
-                    contextofondo.drawImage(
-                        bloquevallajardin,
-                        isox(x * anchurabloque, y * anchurabloque) + desfasex,
-                        isoy(x * anchurabloque, y * anchurabloque) + desfasey - pixeles.data[i] * alturabloquez,
-                        anchuradibujo,
-                        anchuradibujo
-                    );
-
-                }
-                
-            }
-        }// FIN IF */
     }
 
 
+}
+
+function dibujarProps() {
+    contextomapaprops.drawImage(mapaprops, 0, 0);
+    var anchurabloque = 50;
+    var anchuradibujo = 120;
+    //console.log("dibujo un prop");
+
+    var pixeles = contextomapaprops.getImageData(0, 0, 512, 512);
+
+    for (var i = 0; i < pixeles.data.length; i += 4) {
+        var cr = pixeles.data[i];
+        var cg = pixeles.data[i + 1];
+        var cb = pixeles.data[i + 2];
+        var ca = pixeles.data[i + 3];
+        var x = (((i) % (512)) / 4);
+        var y = Math.floor((i / 512) / 4);
+
+        if (cg === 255) {
+
+            contexto.drawImage(
+                sur,
+                isox(x * anchurabloque, y * anchurabloque) + desfasex,
+                isoy(x * anchurabloque, y * anchurabloque) + desfasey - pixeles.data[i]*alturabloquez,
+                anchuradibujo, anchuradibujo // Tamaño del frame
+            );
+        }else if(cg === 200){
+            contexto.drawImage(
+                oeste,
+                isox(x * anchurabloque, y * anchurabloque) + desfasex,
+                isoy(x * anchurabloque, y * anchurabloque) + desfasey - pixeles.data[i]*alturabloquez,
+                anchuradibujo, anchuradibujo // Tamaño del frame
+            ); 
+        }
+    }
 }
 
 function posinicialjugador() {
@@ -336,7 +306,7 @@ function creaprops() {
 
 function crearecogibles() {
     contextomaparecogibles.drawImage(maparecogibles, 0, 0)
-
+    var numerorecogibles = 0
     var pixeles = contextomaparecogibles.getImageData(0, 0, 512, 512);
     for (var i = 0; i < pixeles.data.length; i += 4) {
         var cr = pixeles.data[i];

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="lib/jquery-ui-1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="lib/jquery-ui-1.13.2/jquery-ui.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script>
+        $(document).ready(function () {
+            $("#tabs").tabs();
+            $("#biblioteca").accordion();
+            $("#parametros").accordion();
+        })
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <table>
+            <tr height="40px">
+                <td>Menu</td>
+            </tr>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td width="200px">
+                                <div id="biblioteca">
+                                    <h3>Section 1</h3>
+                                    <div>
+                                        <p>
+                                            Seccion1
+                                        </p>
+                                    </div>
+                                    <h3>Section 2</h3>
+                                    <div>
+                                        <p>
+                                            Seccion2
+                                        </p>
+                                    </div>
+                                    <h3>Section 3</h3>
+                                    <div>
+                                        <p>
+                                            Seccion3
+                                        </p>
+                                        <ul>
+                                            Seccion4
+                                        </ul>
+                                    </div>
+                                    <h3>Section 4</h3>
+                                    <div>
+                                        <p>
+                                            C
+                                        </p>
+                                        <p>
+                                            Su
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="tabcentro">
+                                <div id="tabs">
+                                    <ul>
+                                        <li><a href="#tabs-1">Espacio 1</a></li>
+                                        <li><a href="#tabs-2">Espacio 2</a></li>
+                                        <li><a href="#tabs-3">Espacio 3</a></li>
+                                    </ul>
+                                    <div id="tabs-1">
+                                        <p>Proin </p>
+                                    </div>
+                                    <div id="tabs-2">
+                                        <p>Morbi</p>
+                                    </div>
+                                    <div id="tabs-3">
+                                        <p>Mauris</p>
+                                        <p>Duis</p>
+                                    </div>
+                                </div>
+
+                            </td>
+                            <td width="200px">
+                                <div id="parametros">
+                                    <h3>Section 1</h3>
+                                    <div>
+                                        <p>
+                                            Ma
+                                        </p>
+                                    </div>
+                                    <h3>Section 2</h3>
+                                    <div>
+                                        <p>
+                                            S
+                                        </p>
+                                    </div>
+                                    <h3>Section 3</h3>
+                                    <div>
+                                        <p>
+                                            N
+                                        </p>
+                                        <ul>
+                                            <li>List item one</li>
+                                            <li>List item two</li>
+                                            <li>List item three</li>
+                                        </ul>
+                                    </div>
+                                    <h3>Section 4</h3>
+                                    <div>
+                                        <p>
+                                            C
+                                        </p>
+                                        <p>
+                                            Su
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

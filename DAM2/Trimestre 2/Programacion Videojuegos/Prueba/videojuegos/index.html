@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <title>videojuego</title>
+        <meta charset="UTF8">
+        <link rel="Stylesheet" href="css/estilo.css">
+    </head>
+    <body>
+        <div id="contenedor">
+            <div id="fondo"></div>
+            <canvas id="lienzofondo" width=512px height=512px></canvas>
+            <canvas id="lienzo" width=512px height=512px></canvas>
+        </div>
+        <canvas id="lienzomapa" width=512px height=512px></canvas>
+        <canvas id="lienzomapacolores" width=512px height=512px></canvas>
+        <canvas id="lienzomapatechos" width=512px height=512px></canvas>
+        <canvas id="lienzomapaarquitectura" width=512px height=512px></canvas>
+        <canvas id="lienzomapapersonajes" width=512px height=512px></canvas>
+        <canvas id="lienzomaparecogibles" width=512px height=512px></canvas>
+        <canvas id="lienzomapaprops" width=512px height=512px></canvas>
+        <canvas id="lienzopunto" width=512px height=512px></canvas>
+        <div id="pantallainicial">
+            <h1>Titulo del juego</h1>
+            <h2>Subtitulo del juego</h2>
+            
+            <h3 id="botonjugar">Jugar</h3>
+            <h3 id="botoncreditos">Créditos</h3>
+            <h3 id="botoninstrucciones">Instrucciones</h3>
+        </div>
+        
+        <div id="pantallainicialmedio" style="display:none;">
+            <h1>Titulo del juego</h1>
+            <h2>Subtitulo del juego</h2>
+            
+            <h3 id="botoncontinuar">Continuar</h3>
+            <h3 id="botoncreditos">Créditos</h3>
+            <h3 id="botoninstrucciones">Instrucciones</h3>
+        </div>
+        
+         <div id="pantallanivel" style="display:none;">
+            <h1>Estas en el nivel:</h1>
+            <h2 id="dimenivel"></h2>
+            
+        </div>
+        <script src="lib/jquery-3.6.0.min.js"></script>
+        <script src="js/Personaje.js"></script>
+        <script src="js/Props.js"></script>
+        <script src="js/Recogibles.js"></script>
+        <script src="js/funciones.js"></script>
+        <script src="js/condicionesiniciales.js"></script>
+        <script src="js/inicio.js"></script>
+        <script src="js/bucle.js"></script>
+        <script src="js/funcionesbucle.js"></script>
+        <script>
+            $("#botonjugar").click(function(){
+                $("#pantallainicial").fadeOut("slow");
+                inicio(); 
+                pausa = false;
+            })
+             $("#botoncontinuar").click(function(){
+                $("#pantallainicialmedio").fadeOut("slow");
+                 $("#contenedor").removeClass("difuminado")
+                pausa = false;
+                bucle();
+            })
+            
+            setTimeout("dibujaterreno()",1000)
+           
+        </script>
+    </body>
+</html>

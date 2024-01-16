@@ -7,6 +7,7 @@ function bucle() {
     contextopunto.clearRect(0,0,512,512);
     contextopunto.fillRect(posx/50,posy/50,5,5)
     dibujaterreno();
+    dibujarProps();
 
     /**COLISION DEL PERSONAJE */
     var pixelpersonaje = contextomapa.getImageData(Math.round(posx/50),Math.round(posy/50),1,1)
@@ -104,6 +105,7 @@ function bucle() {
     }
 
         ///////////////////////// DIBUJAMOS LOS Recogibles  /////////////////////////
+        var numerorecogibles = 0
         for (var i = 0; i < numerorecogibles; i++) {
             //Distancia recogibles
             var a = posx - arrayrecogibles[i].x;
@@ -152,12 +154,12 @@ function bucle() {
         for (var i = 0; i < numeroprops; i++) {
             
             contexto.drawImage(
-                imgProp1,
-                isox(arrayprops[i].x, arrayprops[i].y)+desfasex,
-                isoy(arrayprops[i].x, arrayprops[i].y)+desfasey-
+                bloquearquitectura1,
+                isox(arrayprops[i].x, arrayprops[i].y)+120,
+                isoy(arrayprops[i].x, arrayprops[i].y)+120-
                 arrayprops[i].z*alturabloquez
                 
-                , 128, 128,//Tamaño del frame
+                , 120, 200,//Tamaño del frame
             );
         }
 

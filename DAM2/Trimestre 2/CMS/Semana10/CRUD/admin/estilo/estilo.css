@@ -1,0 +1,30 @@
+body,html{background: rgb(220,220,220);font-family:Verdana, Geneva, Tahoma, sans-serif;padding: 0px;margin: 0px;height: 100%;overflow: hidden;}
+
+#formulariologin{width: 200px;height: 200px;background: white;padding: 30px;margin: auto;border-radius:20px;text-align: center;}
+#formulariologin input{width: 100%;padding-top: 10px;padding-bottom:10px;border: 0px;margin-top:10px;outline:none;background: rgb(240,240,240);}
+#formulariologin input[type="text"],#formulariologin input[type="password"]{box-shadow: 0px 4px 8px rgba(0,0,0,0.3) inset;}
+#formulariologin input[type="submit"]{box-shadow: 0px 4px 8px rgba(0,0,0,0.3);}
+.notice{position: absolute;top:0px;width:400px;background: salmon;color: white;height: 20px;left: 50%;margin-left:-200px;padding:10px;text-align: center;}
+aside{width:20%;float:left; height: 100%;box-shadow: -20px 0px 20px rgba(0,0,0,0.3)inset;}
+
+
+section{width:80%;float:right;height: 100%;}
+#contienemenu{padding:10px;}
+#contienemenu ul{list-style-type: none;padding: 0px;margin: 0px;}
+#contienemenu ul li{padding: 10px;margin: 0px;border-bottom: 1px solid grey;}
+#contienemenu ul li a{color:inherit;text-decoration: none;}
+#contienecontenido{padding: 10px;background: white;height:100%;overflow-y: scroll;}
+#contienecontenido table{width: 100%; text-align: left;}
+#contienecontenido table a{padding: 5px;color:inherit;text-decoration: none;}
+#contienecontenido table a i{font-size: 25px;}
+#create{color:inherit;text-decoration: none;font-size:100px;position: absolute;bottom: 10px;right:10px;}
+
+/**Estilos campo */
+.email{filter:blur(3px)}
+.urlsi{color:blue; text-decoration: underline;}
+
+/**Estilos vista */
+
+.paginacion a{
+    font-size: 40px;
+}

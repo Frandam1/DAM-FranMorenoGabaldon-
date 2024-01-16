@@ -1,0 +1,96 @@
+ 	{
+      
+   "titulo": "Nombre del usuario",
+   "descripcion":"Nombre usuario", 
+   "placeholder":"Un nombre",
+   "mascara":"algo",
+   "min":"1",
+   "deshabilitado":"false",
+   "visible":"true",
+   "icono":"fas fa-sort-numeric-up",
+   "tipodato":"text"
+   
+   } 
+
+ 	{
+      
+   "titulo": "Contraseña",
+   "descripcion":"Contraseña usuario", 
+   "placeholder":"Una Contraseña",
+   "mascara":"algo",
+   "min":"1",
+   "deshabilitado":"false",
+   "visible":"true",
+   "icono":"fas fa-sort-numeric-up",
+   "tipodato":"password"
+   
+   } 
+
+ 	{
+      
+   "titulo": "Nombre propio",
+   "descripcion":"Introduce nombre propio", 
+   "placeholder":"Un nombre",
+   "mascara":"algo",
+   "min":"1",
+   "deshabilitado":"false",
+   "visible":"true",
+   "icono":"fas fa-sort-numeric-up",
+   "tipodato":"text"
+   
+   } 
+
+ 	{
+      
+   "titulo": "Nombre propio",
+   "descripcion":"Introduce nombre propio", 
+   "placeholder":"Un nombre",
+   "mascara":"algo",
+   "min":"1",
+   "deshabilitado":"false",
+   "visible":"true",
+   "icono":"fas fa-signature",
+   "tipodato":"text"
+   
+   } 
+	{
+      
+   "titulo": "Apellidos propio",
+   "descripcion":"Introduce Apellidos propio", 
+   "placeholder":"Un Apellidos",
+   "mascara":"algo",
+   "min":"1",
+   "deshabilitado":"false",
+   "visible":"true",
+   "icono":"fas fa-signature",
+   "tipodato":"text"
+   
+   } 
+
+   	{
+      
+   "titulo": "Correo usuario",
+   "descripcion":"Introduce Correo usuario", 
+   "placeholder":"Correo usuario",
+   "mascara":"algo",
+   "min":"1",
+   "deshabilitado":"false",
+   "visible":"true",
+   "icono":"fas fa-signature",
+   "tipodato":"email"
+   
+   } 
+   	{
+      
+   "titulo": "Nivel usuario",
+   "descripcion":"Introduce Nivel usuario", 
+   "placeholder":"Nivel usuario",
+   "mascara":"algo",
+   "min":"1",
+   "deshabilitado":"false",
+   "visible":"true",
+   "icono":"fas fa-signature",
+   "tipodato":"text"
+   
+   } 
+    

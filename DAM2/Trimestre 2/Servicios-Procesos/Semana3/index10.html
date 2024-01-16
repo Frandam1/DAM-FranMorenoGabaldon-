@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invertir Colores de Imagen</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #contienecanvas {
+            width: 2048px;
+            height: 2048px;
+            position: relative;
+        }
+
+        #contienecanvas canvas {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Crear un elemento canvas para trabajar con gráficos -->
+    <canvas id="lienzo" width="2048" height="1722"></canvas>
+    <div id="contienecanvas">
+        <canvas id="lienzodestino" width="2048" height="2048"></canvas>
+        <canvas id="lienzobuckets" width="2048" height="2048"></canvas>
+    </div>
+
+    <script>
+        // Definir el tamaño del área a analizar alrededor de cada píxel
+        var anchura = 1;
+
+        // Definir el umbral de diferencia de color para determinar el borde
+        var umbral = 2;
+        var anchurabracket = 32;
+        var anchura = 2048;
+        var altura = 1722;
+        var x = 0;
+        var y = 0;
+
+
+        // Obtener el contexto 2D del canvas para dibujar en él
+        var contexto = document.getElementById("lienzo").getContext("2d");
+        var contextodestino = document.getElementById("lienzodestino").getContext("2d");
+        var contextobuckets = document.getElementById("lienzobuckets").getContext("2d");
+        var temporizador;
+
+        // Crear una nueva imagen
+        var foto = new Image();
+        foto.src = "prueba.jpg";
+        trabajador = new Array();
+
+        // Cuando la imagen se cargue completamente, realizar la inversión de colores
+        foto.onload = function () {
+            // Registrar el tiempo de inicio de la operación
+            const tiempoInicio = Date.now();
+
+            // Dibujar la imagen original en el lienzo principal
+            contexto.drawImage(foto, 0, 0);
+
+           
+            numerotrabajadores = navigator.hardwareConcurrency;
+            for (var i = 0; i < numerotrabajadores; i++) {
+                trabajador[i] = new Worker("tarea7.js");
+                
+                trabajador[i].onmessage = function (datos,i) {
+                    //console.log(datos)
+                    contextodestino.putImageData(datos.data.resultado, datos.data.mix, datos.data.miy);
+
+                    x += anchurabracket;
+                    if (x > 2048) { x = 0; y += anchurabracket; }
+                    if (y < 1722) {
+                        bucle(datos.data.miidworker, x, y)
+                    }else{
+                        const tiempoInicio = Date.now();
+                        console.log("El programa a tardado "+(tiempoFinal-tiempoInicio))
+                    }
+                }
+                bucle(i, x, y)
+            }
+            // Registrar el tiempo de finalización de la operación
+            const tiempoFinal = Date.now();
+
+            // Imprimir el tiempo que tardó el programa en calcular
+            //console.log("El programa ha tardado en calcular " + (tiempoFinal - tiempoInicio) + " milisegundos");
+        //, 2000;
+    }
+
+        function bucle(i, x, y) {
+            var indice = i
+     
+            contextobuckets.fillRect(x, y, anchurabracket, anchurabracket);
+            contextobuckets.clearRect(x+2,y+2,anchurabracket-4,anchurabracket-4)
+            
+
+            // Obtener los datos de píxeles de la imagen original
+            var pixeles = contexto.getImageData(x, y, anchurabracket, anchurabracket);
+
+            // Obtener los datos de píxeles de la imagen de destino
+            var pixelesdestino = contextodestino.getImageData(0, 0, anchurabracket, anchurabracket);
+
+            json = { px: pixeles, pxdst: pixelesdestino, mix: x, miy: y, miumbral: umbral, mianchurabucket: anchurabracket,idworker:i }
+            trabajador[indice].postMessage(json)
+        }
+    </script>
+</body>
+
+
+
+</html>

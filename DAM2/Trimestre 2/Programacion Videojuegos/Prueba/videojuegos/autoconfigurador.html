@@ -1,0 +1,260 @@
+<!docytpe html>
+<html>
+    <head>
+        <style>
+            body{background:rgb(220,220,220);font-family:sans-serif;text-align:center;}
+            #contenedor{width:512px;height:256px;margin:auto;}
+            #contienelienzos{width:256px;height:256px;float:right;}
+            #contieneparametros{width:256px;height:256px;float:left;text-align:right;}
+            h2{margin:0px;padding:0px;font-size:14px;display:inline;}
+            canvas{border:1px solid black;}
+            #oculto{display:none;}
+        </style>
+    </head>
+    <body>
+        <h1>Personaliza tu personaje</h1>
+        <div id="contenedor">
+             <div id="contienelienzos">
+                <canvas width=256px height=256px id="lienzo"></canvas>
+            </div>
+            <div id="contieneparametros">
+                <h2>Color del pelo:</h2>
+                <input type="color" id="colorpelo" class="color" value="rgb(255,0,0)"><br><br>
+                <h2>Color de la piel:</h2>
+                <input type="color" id="colorpiel" class="color" value="#cccccc"><br><br>
+                <h2>Color de la camiseta:</h2>
+                <input type="color" id="colorcamiseta" class="color" value="#cccccc"><br><br>
+                <h2>Color de los pantalones:</h2>
+                <input type="color" id="colorpantalones" class="color" value="#cccccc"><br><br>
+                <h2>Color de las zapatillas:</h2>
+                <input type="color" id="colorzapatillas" class="color" value="#cccccc"><br><br>
+            </div>
+        </div>
+       <div id="oculto">
+            <canvas id="imagenpelo" width=2048px height=2048px></canvas>
+            <canvas id="colorpelosolido" width=2048px height=2048px></canvas>
+            <canvas id="fusionpelo" width=2048px height=2048px></canvas>
+           
+           <canvas id="imagenpiel" width=2048px height=2048px></canvas>
+            <canvas id="colorpielsolido" width=2048px height=2048px></canvas>
+            <canvas id="fusionpiel" width=2048px height=2048px></canvas>
+           
+           <canvas id="imagencamiseta" width=2048px height=2048px></canvas>
+            <canvas id="colorcamisetasolido" width=2048px height=2048px></canvas>
+            <canvas id="fusioncamiseta" width=2048px height=2048px></canvas>
+           
+           <canvas id="imagenpantalones" width=2048px height=2048px></canvas>
+            <canvas id="colorpantalonessolido" width=2048px height=2048px></canvas>
+            <canvas id="fusionpantalones" width=2048px height=2048px></canvas>
+           
+           <canvas id="imagenzapatilla" width=2048px height=2048px></canvas>
+            <canvas id="colorzapatillasolido" width=2048px height=2048px></canvas>
+            <canvas id="fusionzapatilla" width=2048px height=2048px></canvas>
+           
+           <canvas id="fusiondetodo" width=2048px height=2048px></canvas>
+        </div>
+        <script src="lib/jquery-3.6.0.min.js"></script>
+        <script>
+            var temporizador;
+            var spritex = 0;
+            var spritey = 0;
+            var contexto = document.getElementById("lienzo").getContext("2d");
+            //PELO
+            var ctxpeloimg = document.getElementById("imagenpelo").getContext("2d");
+            var ctxpelocolor = document.getElementById("colorpelosolido").getContext("2d");
+            var ctxpelofusion = document.getElementById("fusionpelo").getContext("2d");
+            //Piel
+            var ctxpielimg = document.getElementById("imagenpiel").getContext("2d");
+            var ctxpielcolor = document.getElementById("colorpielsolido").getContext("2d");
+            var ctxpielfusion = document.getElementById("fusionpiel").getContext("2d");
+            // camiseta
+            var ctxcamisetaimg = document.getElementById("imagencamiseta").getContext("2d");
+            var ctxcamisetacolor = document.getElementById("colorcamisetasolido").getContext("2d");
+            var ctxcamisetafusion = document.getElementById("fusioncamiseta").getContext("2d");
+            // pantalones
+            var ctxpantalonesimg = document.getElementById("imagenpantalones").getContext("2d");
+            var ctxpantalonescolor = document.getElementById("colorpantalonessolido").getContext("2d");
+            var ctxpantalonesfusion = document.getElementById("fusionpantalones").getContext("2d");
+            // zapatillas
+            var ctxzapatillasimg = document.getElementById("imagenzapatilla").getContext("2d");
+            var ctxzapatillascolor = document.getElementById("colorzapatillasolido").getContext("2d");
+            var ctxzapatillasfusion = document.getElementById("fusionzapatilla").getContext("2d");
+            var canvasguardar = document.getElementById("fusiondetodo")
+            
+             var ctxfusiondetodo = document.getElementById("fusiondetodo").getContext("2d");
+            
+            var pelo = new Image();pelo.src = "img/componentespersonaje/pelo.png";
+            var pantalones = new Image();pantalones.src = "img/componentespersonaje/pantalones.png";
+            var camiseta = new Image();camiseta.src = "img/componentespersonaje/camiseta.png";
+            var piel = new Image();piel.src = "img/componentespersonaje/piel.png";
+            var cara = new Image();cara.src = "img/componentespersonaje/cara.png";
+            var pies = new Image();pies.src = "img/componentespersonaje/pies.png";
+            var sombra = new Image();sombra.src = "img/componentespersonaje/sombra.png";
+            var imagenfinal = new Image();
+            inicio();
+            
+            function inicio(){
+                temporizador = setTimeout("bucle()",1000);
+               var rpelo = Math.round(Math.random()*255);
+                var gpelo = Math.round(Math.random()*255);
+                var bpelo = Math.round(Math.random()*255);
+                var rpantalones = Math.round(Math.random()*255);
+                var gpantalones = Math.round(Math.random()*255);
+                var bapantalones = Math.round(Math.random()*255);
+                var rcamiseta = Math.round(Math.random()*255);
+                var gcamiseta = Math.round(Math.random()*255);
+                var bcamiseta = Math.round(Math.random()*255);
+                var rpiel = Math.round(Math.random()*255);
+                var gpiel = Math.round(Math.random()*255);
+                var bpiel = Math.round(Math.random()*255);
+                var rpies = Math.round(Math.random()*255);
+                var gpies = Math.round(Math.random()*255);
+                var bpies = Math.round(Math.random()*255);
+               $("#colorpelo").val(rgbToHex(rpelo, gpelo, bpelo))
+                $("#colorpantalones").val(rgbToHex(rpantalones, gpantalones, bapantalones))
+                $("#colorcamiseta").val(rgbToHex(rcamiseta, gcamiseta, bcamiseta))
+                $("#colorpiel").val(rgbToHex(rpiel, gpiel, bpiel))
+                $("#colorzapatillas").val(rgbToHex(rpies, gpies, bpies))
+               
+            }
+             $(document).ready(function(){
+                
+             })
+                 
+            setTimeout(function(){
+                 pinta()
+            },5000)
+            
+            setTimeout(function(){
+                saveImage()
+                
+            },15000)
+            
+             setTimeout(function(){
+               window.location = window.location
+               
+            },30000)
+                    
+           
+            function bucle(){
+                
+                spritex++;
+                if(spritex > 7){
+                    spritey++;
+                    spritex = 0;
+                }
+                if(spritey > 7){
+                    spritey = 0;
+                }
+                contexto.clearRect(0,0,256,256)
+                
+                contexto.drawImage(imagenfinal,spritex*256,spritey*256,256,256,0,0,256,256);
+                
+                
+                clearTimeout(temporizador)
+                temporizador = setTimeout("bucle()",100)
+            }
+            function pinta(){
+                // pelo
+                    ctxpeloimg.drawImage(pelo,0,0)
+                    ctxpelocolor.fillStyle = $("#colorpelo").val();
+                    ctxpelocolor.fillRect(0,0,2048,2048);
+                    var pximgpelo = ctxpeloimg.getImageData(0,0,2048,2048)
+                    var pximgcolor = ctxpelocolor.getImageData(0,0,2048,2048)
+                    for(var i = 0;i<pximgpelo.data.length;i++){
+                        pximgpelo.data[i] = (pximgpelo.data[i] * pximgcolor.data[i])/255
+                    }
+                    
+                    ctxpelofusion.putImageData(pximgpelo,0,0)
+                    
+                    // piel
+                    ctxpielimg.drawImage(piel,0,0)
+                    ctxpielcolor.fillStyle = $("#colorpiel").val();
+                    ctxpielcolor.fillRect(0,0,2048,2048);
+                    var pximgpiel = ctxpielimg.getImageData(0,0,2048,2048)
+                    var pximgcolor = ctxpielcolor.getImageData(0,0,2048,2048)
+                    for(var i = 0;i<pximgpiel.data.length;i++){
+                        pximgpiel.data[i] = (pximgpiel.data[i] * pximgcolor.data[i])/255
+                    }
+                    
+                    ctxpielfusion.putImageData(pximgpiel,0,0)
+                    // camiseta
+                    ctxcamisetaimg.drawImage(camiseta,0,0)
+                    ctxcamisetacolor.fillStyle = $("#colorcamiseta").val();
+                    ctxcamisetacolor.fillRect(0,0,2048,2048);
+                    var pximgcamiseta = ctxcamisetaimg.getImageData(0,0,2048,2048)
+                    var pximgcolor = ctxcamisetacolor.getImageData(0,0,2048,2048)
+                    for(var i = 0;i<pximgcamiseta.data.length;i++){
+                        pximgcamiseta.data[i] = (pximgcamiseta.data[i] * pximgcolor.data[i])/255
+                    }
+                    
+                    ctxcamisetafusion.putImageData(pximgcamiseta,0,0)
+                    // pantalones
+                    ctxpantalonesimg.drawImage(pantalones,0,0)
+                    ctxpantalonescolor.fillStyle = $("#colorpantalones").val();
+                    ctxpantalonescolor.fillRect(0,0,2048,2048);
+                    var pximgpantalones = ctxpantalonesimg.getImageData(0,0,2048,2048)
+                    var pximgcolor = ctxpantalonescolor.getImageData(0,0,2048,2048)
+                    for(var i = 0;i<pximgpantalones.data.length;i++){
+                        pximgpantalones.data[i] = (pximgpantalones.data[i] * pximgcolor.data[i])/255
+                    }
+                    
+                    ctxpantalonesfusion.putImageData(pximgpantalones,0,0)
+                    // zapatillas
+                    ctxzapatillasimg.drawImage(pies,0,0)
+                    ctxzapatillascolor.fillStyle = $("#colorzapatillas").val();
+                    ctxzapatillascolor.fillRect(0,0,2048,2048);
+                    var pximgzapatilla = ctxzapatillasimg.getImageData(0,0,2048,2048)
+                    var pximgcolor = ctxzapatillascolor.getImageData(0,0,2048,2048)
+                    for(var i = 0;i<pximgzapatilla.data.length;i++){
+                        pximgzapatilla.data[i] = (pximgzapatilla.data[i] * pximgcolor.data[i])/255
+                    }
+                   ctxzapatillasfusion.putImageData(pximgzapatilla,0,0)
+                    
+                    var pixelespelo = ctxpelofusion.getImageData(0,0,2048,2048)
+                    var pixelespiel = ctxpielfusion.getImageData(0,0,2048,2048)
+                    var pixelescamiseta = ctxcamisetafusion.getImageData(0,0,2048,2048)
+                    var pixelespantalones = ctxpantalonesfusion.getImageData(0,0,2048,2048)
+                    var pixeleszapatillas = ctxzapatillasfusion.getImageData(0,0,2048,2048)
+                    
+                    for(var i = 0;i<pixelespelo.data.length;i++){
+                        pixelespelo.data[i] = pixelespelo.data[i]+pixelespiel.data[i]+pixelescamiseta.data[i]+pixelespantalones.data[i]+pixeleszapatillas.data[i]
+                    }
+                    ctxfusiondetodo.putImageData(pixelespelo,0,0)
+                    ctxfusiondetodo.drawImage(cara,0,0)
+                    ctxfusiondetodo.drawImage(sombra,0,0)
+                    
+                    imagenfinal.src = document.getElementById("fusiondetodo").toDataURL();
+                    
+
+                
+            }
+            
+            function componentToHex(c) {
+              var hex = c.toString(16);
+              return hex.length == 1 ? "0" + hex : hex;
+            }
+
+            function rgbToHex(r, g, b) {
+              return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+            }
+            function saveImage() {
+                var dataURL = canvasguardar.toDataURL("image/png");
+                
+             $.ajax({
+                  type: "POST",
+                  url: "testSave.php",
+                  data:  
+                      "imagen="+dataURL
+                  
+                }).done(function(o) {
+                  console.log(o); 
+                  // If you want the file to be visible in the browser 
+                  // - please modify the callback in javascript. All you
+                  // need is to return the url to the file, you just saved 
+                  // and than put the image in your browser.
+                });
+            }
+        </script>
+    </body>
+</html>

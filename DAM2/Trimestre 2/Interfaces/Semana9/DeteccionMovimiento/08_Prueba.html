@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteccion movimiento</title>
+    <style>
+        html, body { background: black; }
+        video { display: none; }
+        canvas { position: absolute; top: 0px; left: 0px; }
+        #lienzo2 { opacity: 0.5; }
+    </style>
+</head>
+
+<body>
+    <canvas id="lienzo" width="640px" height="480px"></canvas>
+    <canvas id="lienzo2" width="640px" height="480px"></canvas>
+    <video id="video" autoplay></video>
+    <script>
+        const video = document.getElementById("video");
+        const lienzo = document.getElementById("lienzo");
+        const lienzo2 = document.getElementById("lienzo2");
+        const contexto = lienzo.getContext("2d");
+        const contexto2 = lienzo2.getContext("2d");
+        contexto2.fillStyle = "rgba(255,255,255,0.1)";
+        const paso = 48;
+        var pixelesviejos = [];
+        var pixelesnuevos = [];
+        var contador = 0;
+        var cuadrosx = [];
+        var cuadrosy = [];
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (flujo) {
+                video.srcObject = flujo;
+            })
+            .catch(function (error) {
+                console.log("Error: " + error);
+            });
+
+        function videoAlienzo() {
+            cuadrosx = [];
+            cuadrosy = [];
+            contexto2.fillRect(0, 0, 640, 480);
+            contexto.drawImage(video, 0, 0, lienzo.width, lienzo.height);
+            pixelesviejos = pixelesnuevos;
+            pixelesnuevos = [];
+
+            for (let x = 0; x < 640; x += paso) {
+                for (let y = 0; y < 480; y += paso) {
+                    let pixel = contexto.getImageData(x, y, 1, 1);
+                    pixelesnuevos.push({
+                        data: pixel.data,
+                        x: x,
+                        y: y
+                    });
+                }
+            }
+
+            if (contador > 0) {
+                for (let i = 0; i < pixelesnuevos.length; i++) {
+                    let rojonuevo = pixelesnuevos[i].data[0];
+                    let rojoviejo = pixelesviejos[i].data[0];
+                    let verdenuevo = pixelesnuevos[i].data[1];
+                    let verdeviejo = pixelesviejos[i].data[1];
+                    let azulnuevo = pixelesnuevos[i].data[2];
+                    let azulviejo = pixelesviejos[i].data[2];
+
+                    let diferenciarojo = Math.abs(rojonuevo - rojoviejo);
+                    let diferenciaverde = Math.abs(verdenuevo - verdeviejo);
+                    let diferenciaazul = Math.abs(azulnuevo - azulviejo);
+
+                    let promedio = (diferenciarojo + diferenciaazul + diferenciaverde) / 3;
+
+                    if (promedio > 25) {
+                        contexto.strokeRect(pixelesnuevos[i].x, pixelesnuevos[i].y, paso, paso);
+                    }
+                    if (typeof (cuadrosx[pixelesnuevos[i].x] == 'undefined')) {
+                        cuadrosx[pixelesnuevos[i].x] = 1;
+                    } else {
+                        cuadrosx[pixelesnuevos[i].x]++;
+                    }
+                    if (typeof (cuadrosy[pixelesnuevos[i].y] == 'undefined')) {
+                        cuadrosy[pixelesnuevos[i].y] = 1;
+                    } else {
+                        cuadrosy[pixelesnuevos[i].y]++;
+                    }
+                }
+            }
+            let maxx = 0;
+            let indicex = 0;
+            cuadrosx.forEach(function (number, index) {
+                if (number > maxx) {
+                    maxx = number;
+                    indicex = index;
+                }
+            });
+
+            maxx *= paso;
+
+            let maxy = 0;
+            let indicey = 0;
+            cuadrosy.forEach(function (number, index) {
+                if (number > maxy) {
+                    maxy = number;
+                    indicey = index;
+                }
+            });
+            maxy *= paso;
+
+            console.log("MaxX: " + maxx);
+            console.log("MaxY: " + maxy);
+
+            requestAnimationFrame(videoAlienzo);
+            contador++;
+        }
+
+        video.addEventListener('play', function () {
+            videoAlienzo();
+        });
+    </script>
+
+</body>
+
+</html>

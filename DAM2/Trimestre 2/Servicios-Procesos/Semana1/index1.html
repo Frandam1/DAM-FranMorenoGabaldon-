@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const tiempoInicio = Date.now()
+        const primerCalculo = 9751;
+        //Calculo 1
+        console.log("calculo1");
+        var num = 0.007654556756754;
+        var iteraciones = 100000000;
+
+        for (var i = 0; i < iteraciones; i++) {
+            num = num * 1.0000000356756743;
+        }
+        //Calculo 2
+        console.log("calculo2");
+        var num = 0.007654556756754;
+        var iteraciones = 100000000;
+
+        for (var i = 0; i < iteraciones; i++) {
+            num = num * 1.0000000356756743;
+        }
+
+        //Calculo 3
+        console.log("calculo3");
+        var num = 0.007654556756754;
+        var iteraciones = 100000000;
+
+        for (var i = 0; i < iteraciones; i++) {
+            num = num * 1.0000000356756743;
+        }
+
+        //Calculo 4
+        console.log("calculo4");
+        var num = 0.007654556756754;
+        var iteraciones = 100000000;
+
+        for (var i = 0; i < iteraciones; i++) {
+            num = num * 1.0000000356756743;
+        }
+
+
+        const tiempoFinal = Date.now();
+
+        console.log("El programa a tardado en calcular " + (tiempoFinal - tiempoInicio))
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+	{
+      
+   "titulo": "Codigo shortname de la platanforma",
+   "descripcion":"Introduce nombre propio", 
+   "placeholder":"Un nombre",
+   "mascara":"algo",
+   "min":"1",
+   "deshabilitado":"false",
+   "visible":"true",
+   "icono":"fas fa-signature",
+   "tipodato":"text"
+   "FKtabla":"asignaturas",
+   "FKclave":"idmoodle",
+   "FKmostrar":"nombre"
+   
+   } 
+    

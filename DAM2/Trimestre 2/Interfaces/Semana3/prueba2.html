@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica jQuery UI</title>
+    <link rel="stylesheet" href="css/estilopropio.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="lib/jquery-connections-gh-pages/jquery.connections.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+    <script>
+        var ejecucion = new Array();
+        $(document).ready(function () {
+
+            function crearConexiones() {
+                $(".nodo").each(function () {
+                    if ($(this).attr("exectarget") != '') {
+                        $(this).connections({ to: ".nodo[id='" + $(this).attr("exectarget") + "']" });
+                    }
+                });
+            }
+
+            for (var i = 0; i < localStorage.length; i++) {
+                clave = localStorage.key(i)
+                valor = localStorage.getItem(localStorage.key(i));
+                $(".nodo[id='" + clave + "']").css("left", valor.split(",")[0])
+                $(".nodo[id='" + clave + "']").css("top", valor.split(",")[1])
+            }
+
+            crearConexiones();
+
+
+
+
+
+            $("#tabs").tabs();
+            $("#parametros, #biblioteca").accordion({ collapsible: true, active: false });
+            $("#menu").menu();
+            $(".nodo").draggable({
+                start: function () {
+
+                },
+                drag: function () {
+                    $("connection").remove();
+                    $(".nodo").each(function () {
+                        if ($(this).attr("exectarget") != '') {
+                            $(this).connections({ to: ".nodo[id='" + $(this).attr("exectarget") + "']" });
+                        }
+                    })
+
+                },
+                stop: function () {
+
+                }
+            });
+            $(".dialogo").dialog();
+            $(".dialogo").dialog('close');
+            $("#container").on("contextmenu", function (event) {
+                event.preventDefault();
+                $(".dialogo").dialog({
+                    show: {
+                        effect: "bounce",
+                        duration: 1500,
+                        times: 1,
+                        distance: 30
+                    },
+                    open: function () {
+                        var tituloDialogo = $("#ui-id-25.ui-dialog-title");
+                        tituloDialogo.text("Opciones de menú");
+                        console.log("menu contextual");
+                    }
+                });
+            });
+            $(".select22").select2();
+            //$("button").button();
+            $("#play").click(function () {
+                contador = 0;
+                ejecucion = []
+                ejecucion[0] = $("#beginPlay").attr("id")//Asignamos nuestro nodo de entrada al primer hueco del array
+                destino = $("#beginPlay").attr("exectarget")//Asignamos los siguientes nodos a una variable
+                nodoactual = $("#beginPlay")//Asignamos los elementos con esta id a la variable  nodo actual
+                while (nodoactual.attr("id") != 'undefined') {//Iteramos hasta terminar los nodos(undefined)
+                    destino = $(".nodo[id='" + nodoactual.attr("exectarget") + "']")
+                    nodoactual = $(".nodo[id='" + nodoactual.attr("exectarget") + "']")//Asignamos el nuevo nodo
+                    ejecucion.push(nodoactual.attr("id"))//Lo agregamos al array
+                    contador++;
+                    console.log("el objetivo es " + nodoactual.attr("exectarget"))
+                    if (contador > 100 || typeof (nodoactual.attr("exectarget")) == 'undefined') {//Iteramos hasta el undefined
+                        break;
+                    }
+                }
+            })
+            $("#save").click(function () {
+                $(".nodo").each(function () {
+                    localStorage.setItem($(this).attr("id"), $(this).css("left") + "," + $(this).css("top"));
+                })
+
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="dialogo">
+
+        <select class="select22">
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+        </select>
+    </div>
+    <div id="header">
+        <ul id="menu">
+            <li>
+                <div>Menu  1</div>
+            </li>
+            <li>
+                <div>Menu  2</div>
+            </li>
+
+
+            </li>
+            <li >
+                <div>Menu  3</div>
+            </li>
+        </ul>
+        <tr>
+            <td>
+                <button id="play">Iniciar</button>
+                <button id="save">Guardar</button>
+            </td>
+        </tr>
+    </div>
+    <div id="container">
+        <div id="parametros">
+            <h3>Parametros 1</h3>
+            <div>
+                <p>
+                    Info de la Seccion 1
+                </p>
+            </div>
+            <h3>Parametros 2</h3>
+            <div>
+                <p>
+                    Info de la Seccion 2
+                </p>
+            </div>
+            <h3>Parametros 3</h3>
+            <div>
+                <p>
+                    Info de la Seccion 3
+                </p>
+                <ul>
+                    Lista de la seccion 3
+                </ul>
+                <ul>
+                    Segunda lista de la seccion 3
+                </ul>
+            </div>
+            <h3>Parametros 4</h3>
+            <div>
+                <p>
+                    Info de la Seccion 3
+                </p>
+                <p>
+                    Info de la Seccion 3
+                </p>
+            </div>
+        </div>
+        <div id="tabs-container">
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tab1">Opción </a></li>
+                    <li><a href="#tab2">Opción 2</a></li>
+                    <li><a href="#tab3">Opción 3</a></li>
+                    <li><a href="#tab4">Opción 4</a></li>
+                </ul>
+                <div id="tab1">
+                    <div id="espacio" class="espacio">
+
+                        <div title="Basic dialog" class="nodo" id="beginPlay" exectarget="nodo1">
+                            <p>BeginPlay</p>
+                            <div class="entradas">
+                                <div class="ejecucion"><span class="conector"></span>Start</div>
+                                <div class="parametro"><span class="conector"></span>Opcion A</div>
+
+
+                            </div>
+                            <div class="salidas">
+                                <div class="ejecucion">Start<span class="conector" id="inicio"></span></div>
+                                <div class="parametro">Opcion A<span class="conector"></span></div>
+
+                            </div>
+                        </div>
+
+                        <div title="Basic dialog" class="nodo" id="nodo1" exectarget="nodo2">
+                            <p>Soy un nodo 1</p>
+                            <div class="entradas">
+                                <div class="ejecucion"><span class="conector"></span>Start</div>
+                                <div class="parametro"><span class="conector"></span>Opcion A</div>
+
+
+                            </div>
+                            <div class="salidas">
+                                <div class="ejecucion">Start<span class="conector" id="inicio"></span></div>
+                                <div class="parametro">Opcion A<span class="conector"></span></div>
+
+                            </div>
+                        </div>
+                        <div title="Basic dialog" class="nodo" id="nodo2" exectarget="nodo3">
+                            <p>Soy un nodo 2</p>
+                            <div class="entradas">
+                                <div class="ejecucion"><span class="conector" id="final"></span>Start</div>
+                                <div class="parametro"><span class="conector"></span>Opcion A</div>
+
+
+                            </div>
+                            <div class="salidas">
+                                <div class="ejecucion">Start<span class="conector"></span></div>
+                                <div class="parametro">Opcion A<span class="conector"></span></div>
+
+                            </div>
+                        </div>
+                        <div title="Basic dialog" class="nodo" id="nodo3" exectarget="nodo4">
+                            <p>Soy un nodo 3</p>
+                            <div class="entradas">
+                                <div class="ejecucion"><span class="conector"></span>Start</div>
+                                <div class="parametro"><span class="conector"></span>Opcion A</div>
+
+
+                            </div>
+                            <div class="salidas">
+                                <div class="ejecucion">Start<span class="conector"></span></div>
+                                <div class="parametro">Opcion A<span class="conector"></span></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="tab2">
+                    <div id="espacio">
+                        <div id="dialog" title="Basic dialog" class="nodo">
+                            Soy un nodo parte 2
+                        </div>
+                    </div>
+                </div>
+                <div id="tab3">
+                    Contenido de la Opción 3
+                </div>
+                <div id="tab4">
+                    Contenido de la Opción 4
+                </div>
+            </div>
+        </div>
+        <div id="biblioteca">
+            <h3>Biblioteca 1</h3>
+            <div>
+                <p>
+                    Info de la Seccion 1
+                </p>
+            </div>
+            <h3>Biblioteca 2</h3>
+            <div>
+                <p>
+                    Info de la Seccion 2
+                </p>
+            </div>
+            <h3>Biblioteca 3</h3>
+            <div>
+                <p>
+                    Info de la Seccion 3
+                </p>
+                <ul>
+                    Lista de la seccion 3
+                </ul>
+                <ul>
+                    Segunda lista de la seccion 3
+                </ul>
+            </div>
+            <h3>Biblioteca 4</h3>
+            <div>
+                <p>
+                    Info de la Seccion 3
+                </p>
+                <p>
+                    Info de la Seccion 3
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

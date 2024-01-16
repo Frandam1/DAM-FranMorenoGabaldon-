@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteccion movimiento</title>
+</head>
+<body>
+    <canvas id="lienzo" width="640px" height="480px"></canvas>
+    <video id="video" autoplay></video>
+    <script>
+        const video = document.getElementById("video");
+        const lienzo = document.getElementById("lienzo");
+        const contexto = document.getElementById("2d");
+
+        navigator.mediaDevices.getUserMedia({video:true})
+            .then(function(flujo){
+                video.srcObject = flujo;
+            })
+            .catch(function(error){
+                console.log("Error: "+error)
+            })
+
+            function videoAlienzo(){
+                contexto.drawImage(video,0,0,lienzo.width,lienzo.height)
+                requestAnimationFrame(videoAlienzo)
+            }
+            video.addEventListener('play',function(){
+                videoAlienzo()
+            })
+    </script>
+    
+</body>
+</html>

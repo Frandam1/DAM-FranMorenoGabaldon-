@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="lib/jquery-ui-1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="lib/jquery-ui-1.13.2/jquery-ui.css">
+    <style>
+        /* Establece una altura mínima para la tabla principal */
+        table {
+            border: 2px solid gray;
+            width: 100%;
+            min-height: 1000px;
+        }
+        #tabs-1{
+            height: 50vh;
+        }
+
+        /* Elimina las alturas fijas en las filas de la tabla principal */
+        table tr {
+            /* height: 20px; */ /* Comenta o elimina esta línea */
+        }
+
+        /* Ajusta la altura de las celdas secundarias */
+        #app table {
+            height: 100%;
+        }
+
+        /* Ajusta el tamaño de las celdas secundarias */
+        #app table td {
+            vertical-align: top; /* Alinea el contenido en la parte superior */
+            padding: 10px; /* Espaciado interior para separar el contenido */
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#tabs").tabs();
+            $("#biblioteca").accordion();
+            $("#parametros").accordion();
+        })
+    </script>
+</head>
+
+<body>
+    <div id="app" class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div id="biblioteca" class="accordion">
+                    <h3>Section 1</h3>
+                    <div>
+                        <p>
+                            Ma
+                        </p>
+                    </div>
+                    <h3>Section 2</h3>
+                    <div>
+                        <p>
+                            S
+                        </p>
+                    </div>
+                    <h3>Section 3</h3>
+                    <div>
+                        <p>
+                            N
+                        </p>
+                        <ul>
+                            <li>List item one</li>
+                            <li>List item two</li>
+                            <li>List item three</li>
+                        </ul>
+                    </div>
+                    <h3>Section 4</h3>
+                    <div>
+                        <p>
+                            C
+                        </p>
+                        <p>
+                            Su
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Espacio 1</a></li>
+                        <li><a href="#tabs-2">Espacio 2</a></li>
+                        <li><a href="#tabs-3">Espacio 3</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        <p>Proin </p>
+                    </div>
+                    <div id="tabs-2">
+                        <p>Morbi</p>
+                    </div>
+                    <div id="tabs-3">
+                        <p>Mauris</p>
+                        <p>DuisDuisDuisDuisDuisDuis
+                            DuisDuisDuisDuisDuisDuis
+                            DuisDuisDuisDuisDuisDuis
+                            DuisDuisDuisDuisDuisDuis
+                            DuisDuisDuisDuisDuisDuis
+                            DuisDuisDuisDuisDuisDuis
+                            DuisDuisDuisDuisDuisDuis
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="parametros" class="accordion">
+                    <h3>Section 1</h3>
+                    <div>
+                        <p>
+                            Ma
+                        </p>
+                    </div>
+                    <h3>Section 2</h3>
+                    <div>
+                        <p>
+                            S
+                        </p>
+                    </div>
+                    <h3>Section 3</h3>
+                    <div>
+                        <p>
+                            N
+                        </p>
+                        <ul>
+                            <li>List item one</li>
+                            <li>List item two</li>
+                            <li>List item three</li>
+                        </ul>
+                    </div>
+                    <h3>Section 4</h3>
+                    <div>
+                        <p>
+                            C
+                        </p>
+                        <p>
+                            Su
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

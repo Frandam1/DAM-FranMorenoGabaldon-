@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invertir Colores de Imagen</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Crear un elemento canvas para trabajar con gráficos -->
+    <canvas id="lienzo" width="2048" height="1722"></canvas>
+    <canvas id="lienzodestino" width="2048" height="2048"></canvas>
+    <script>
+        // Definir el tamaño del área a analizar alrededor de cada píxel
+        var anchura = 1;
+
+        // Obtener el contexto 2D del canvas para dibujar en él
+        var contexto = document.getElementById("lienzo").getContext("2d");
+        var contextodestino = document.getElementById("lienzodestino").getContext("2d");
+
+        // Crear una nueva imagen
+        var foto = new Image();
+        foto.src = "prueba.jpg";
+
+        // Cuando la imagen se cargue completamente, realizar la inversión de colores
+        foto.onload = function () {
+            // Registrar el tiempo de inicio de la operación
+            const tiempoInicio = Date.now();
+
+            // Dibujar la imagen original en el lienzo principal
+            contexto.drawImage(foto, 0, 0);
+
+            // Obtener los datos de píxeles de la imagen original
+            var pixeles = contexto.getImageData(0, 0, 2048, 2048);
+            
+            // Obtener los datos de píxeles de la imagen de destino
+            var pixelesdestino = contextodestino.getImageData(0, 0, 2048, 2048);
+
+            // Iterar a través de los píxeles y realizar la inversión de colores
+            for (var i = 0; i < pixeles.data.length - 8; i += 4) {
+                if (Math.abs(pixeles.data[i] - pixeles.data[i + 4]) < 20) {
+                    // Si el color del píxel actual es similar al siguiente, establecer a negro
+                    pixelesdestino.data[i] = 0;
+                    pixelesdestino.data[i + 1] = 0;
+                    pixelesdestino.data[i + 2] = 0;
+                    pixelesdestino.data[i + 3] = 255;
+                } else {
+                    // Si el color del píxel actual es diferente al siguiente, establecer a blanco
+                    pixelesdestino.data[i] = 255;
+                    pixelesdestino.data[i + 1] = 255;
+                    pixelesdestino.data[i + 2] = 255;
+                    pixelesdestino.data[i + 3] = 255;
+                }
+            }
+
+            // Colocar los píxeles invertidos en el lienzo de destino
+            contextodestino.putImageData(pixelesdestino, 0, 0);
+
+            // Registrar el tiempo de finalización de la operación
+            const tiempoFinal = Date.now();
+
+            // Imprimir el tiempo que tardó el programa en calcular
+            console.log("El programa ha tardado en calcular " + (tiempoFinal - tiempoInicio) + " milisegundos");
+        };
+    </script>
+</body>
+
+
+</html>

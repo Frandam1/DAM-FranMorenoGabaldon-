@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML</title>
+    <script>
+        // Se ejecuta cuando la ventana se ha cargado completamente
+        window.onload = function () {
+            // Patrones
+            var supercontador = 0
+            var patrones = [];
+            patrones[0] = new Image();
+            patrones[0].src = "vertical.png";
+            patrones[1] = new Image();
+            patrones[1].src = "horizontal.png";
+            patrones[2] = new Image();
+            patrones[2].src = "diagonal1.png";
+            patrones[3] = new Image();
+            patrones[3].src = "diagonal2.png";
+
+            var cuentapatrones = []
+
+            cuentapatrones[0] = 0
+            cuentapatrones[1] = 0
+            cuentapatrones[2] = 0
+            cuentapatrones[3] = 0
+
+            // Obtiene el contexto 2D de dos elementos canvas
+            var contexto = document.getElementById("lienzo").getContext("2d");
+            var contexto2 = document.getElementById("lienzo2").getContext("2d");
+            var contexto3 = document.getElementById("lienzo3").getContext("2d");
+
+            var contextovertical = document.getElementById("lienzovertical").getContext("2d");
+            var contextohorizontal = document.getElementById("lienzohorizontal").getContext("2d");
+            var contextodiagonal1 = document.getElementById("lienzodiagonal1").getContext("2d");
+            var contextodiagonal2 = document.getElementById("lienzodiagonal2").getContext("2d");
+
+            // Carga una imagen
+            let imagen = new Image();
+
+            function procesaImagen(miimagen){
+            imagen.src = "salida/"+miimagen;
+            imagen.onload = function () {
+                // Pinto referencias
+                contextovertical.drawImage(patrones[0], 0, 0);
+                contextohorizontal.drawImage(patrones[1], 0, 0);
+                contextodiagonal1.drawImage(patrones[2], 0, 0);
+                contextodiagonal2.drawImage(patrones[3], 0, 0);
+                // Dibuja la imagen en el primer lienzo
+                contexto.drawImage(imagen, 0, 0);
+
+                // Rellena el segundo lienzo con color blanco
+                contexto2.fillStyle = "white";
+                contexto2.fillRect(0, 0, 512, 512);
+
+                // Detecta los bordes en la imagen y los marca en el segundo lienzo
+                let imagenlienzo1 = contexto.getImageData(0, 0, 512, 512);
+                let imagenlienzo2 = contexto2.getImageData(0, 0, 512, 512);
+
+                for (let i = 0; i < imagenlienzo1.data.length; i += 4) {
+                    // Compara la diferencia entre píxeles adyacentes horizontal y verticalmente
+                    let diferencia = Math.abs(imagenlienzo1.data[i] - imagenlienzo1.data[i + 4]);
+                    let diferencia2 = Math.abs(imagenlienzo1.data[i] - imagenlienzo1.data[i + 512 * 4]);
+
+                    // Si la diferencia es mayor a 10, marca el píxel como negro en el segundo lienzo, de lo contrario, blanco
+                    if (diferencia > 10 || diferencia2 > 10) {
+                        imagenlienzo2.data[i] = 0;
+                        imagenlienzo2.data[i + 1] = 0;
+                        imagenlienzo2.data[i + 2] = 0;
+                        imagenlienzo2.data[i + 3] = 255;
+                    } else {
+                        imagenlienzo2.data[i] = 255;
+                        imagenlienzo2.data[i + 1] = 255;
+                        imagenlienzo2.data[i + 2] = 255;
+                        imagenlienzo2.data[i + 3] = 255;
+                    }
+                }
+
+                // Aplica los cambios al segundo lienzo
+                contexto2.putImageData(imagenlienzo2, 0, 0);
+
+                // Recorro la Imagen nueva para patrón vertical
+                let muestravertical = contextovertical.getImageData(0, 0, 8, 8);
+                let coordenadasVerticales = [];
+
+                for (let x = 0; x < 512; x++) {
+                    for (let y = 0; y < 512; y++) {
+                        let trozo = contexto2.getImageData(x, y, 8, 8);
+                        let suma = 0;
+
+                        for (let i = 0; i < trozo.data.length; i += 4) {
+                            suma += Math.abs(trozo.data[i] - muestravertical.data[i]);
+                        }
+
+                        if (suma < 4000) {
+                            coordenadasVerticales.push({ x, y });
+                            cuentapatrones[0]++;
+                        }
+                    }
+                }
+
+                // Dibuja rectángulos para patrón 
+                contexto3.fillStyle = "red";
+                for (let coord of coordenadasVerticales) {
+                    contexto3.fillRect(coord.x, coord.y, 2, 2);
+                }
+
+                // Recorro la Imagen nueva para patrón horizontal
+                let muestrahorizontal = contextohorizontal.getImageData(0, 0, 8, 8);
+                let coordenadasHorizontales = [];
+
+                for (let x = 0; x < 512; x++) {
+                    for (let y = 0; y < 512; y++) {
+                        let trozo = contexto2.getImageData(x, y, 8, 8);
+                        let suma = 0;
+
+                        for (let i = 0; i < trozo.data.length; i += 4) {
+                            suma += Math.abs(trozo.data[i] - muestrahorizontal.data[i]);
+                        }
+
+                        if (suma < 2000) {
+                            coordenadasHorizontales.push({ x, y });
+                            cuentapatrones[1]++;
+                        }
+                    }
+                }
+
+                // Dibuja rectángulos para patrón diagonal
+                contexto3.fillStyle = "blue";
+                for (let coord of coordenadasHorizontales) {
+                    contexto3.fillRect(coord.x, coord.y, 2, 2);
+                }
+
+                // Recorro la Imagen nueva para patrón diagonal1//////////////////
+                let muestradiagonal1 = contextodiagonal1.getImageData(0, 0, 8, 8);
+                let coordenadasDiagonales1 = [];
+
+                for (let x = 0; x < 512; x++) {
+                    for (let y = 0; y < 512; y++) {
+                        let trozo = contexto2.getImageData(x, y, 8, 8);
+                        let suma = 0;
+
+                        for (let i = 0; i < trozo.data.length; i += 4) {
+                            suma += Math.abs(trozo.data[i] - muestradiagonal1.data[i]);
+                        }
+
+                        if (suma < 4000) {
+                            coordenadasDiagonales1.push({ x, y });
+                            cuentapatrones[2]++;
+                        }
+                    }
+                }
+
+                // Dibuja rectángulos para patrón 
+                contexto3.fillStyle = "orange";
+                for (let coord of coordenadasDiagonales1) {
+                    contexto3.fillRect(coord.x, coord.y, 2, 2);
+                }
+
+                // Recorro la Imagen nueva para patrón diagonal2//////////////////
+                let muestradiagonal2 = contextodiagonal2.getImageData(0, 0, 8, 8);
+                let coordenadasDiagonales2 = [];
+
+                for (let x = 0; x < 512; x++) {
+                    for (let y = 0; y < 512; y++) {
+                        let trozo = contexto2.getImageData(x, y, 8, 8);
+                        let suma = 0;
+
+                        for (let i = 0; i < trozo.data.length; i += 4) {
+                            suma += Math.abs(trozo.data[i] - muestradiagonal2.data[i]);
+                        }
+
+                        if (suma < 4000) {
+                            coordenadasDiagonales2.push({ x, y });
+                            cuentapatrones[3]++;
+                        }
+                    }
+                }
+
+                // Dibuja rectángulos para patrón 
+                contexto3.fillStyle = "green";
+                for (let coord of coordenadasDiagonales2) {
+                    contexto3.fillRect(coord.x, coord.y, 2, 2);
+                }
+
+                
+                console.log(cuentapatrones)
+                let total = 0;
+
+                for(i=0;i<cuentapatrones.length;i++){
+                    total += cuentapatrones[i]
+                }
+                if (total !== 0) {
+                    for (let i = 0; i < cuentapatrones.length; i++) {
+                        cuentapatrones[i] /= total;
+                    }
+                }
+                console.log(cuentapatrones)
+
+                let guarda = JSON.stringify(cuentapatrones)
+                let patron = miimagen.split(".")
+                let patronpartido = miimagen[0]
+                fetch("guardajson2.php?patron="+patronpartido+"&datos="+guarda)
+            }
+            }
+            procesaImagen("flor.jpg")
+            fetch("json/imagenes.json")
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(datos){
+                console.log(datos)
+            })
+            
+        }
+        
+    </script>
+    <style>
+        /* Estilo para los elementos canvas, agregando un borde negro de 2px */
+        canvas {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dos elementos canvas con dimensiones 512x512px -->
+    <canvas width="512px" height="512px" id="lienzo"></canvas>
+    <canvas width="512px" height="512px" id="lienzo2"></canvas>
+    <canvas width="512px" height="512px" id="lienzo3"></canvas>
+    <canvas width="8px" height="8px" id="lienzovertical"></canvas>
+    <canvas width="8px" height="8px" id="lienzohorizontal"></canvas>
+    <canvas width="8px" height="8px" id="lienzodiagonal1"></canvas>
+    <canvas width="8px" height="8px" id="lienzodiagonal2"></canvas>
+</body>
+
+</html>

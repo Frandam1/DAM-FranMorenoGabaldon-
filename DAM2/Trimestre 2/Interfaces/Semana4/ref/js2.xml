@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<categories>
+  <category id="Value properties">
+    <instruction>inglobalThis</instruction>
+    <instruction>Infinity</instruction>
+    <instruction>NaN</instruction>
+    <instruction>undefined</instruction>
+  </category>
+  <category id="Function properties">
+    <instruction>eval()</instruction>
+    <instruction>isFinite()</instruction>
+    <instruction>isNaN()</instruction>
+    <instruction>parseFloat()</instruction>
+    <instruction>parseInt()</instruction>
+    <instruction>decodeURI()</instruction>
+    <instruction>decodeURIComponent()</instruction>
+    <instruction>encodeURI()</instruction>
+    <instruction>encodeURIComponent()</instruction>
+    <instruction>escape() Deprecated</instruction>
+    <instruction>unescape()</instruction>
+  </category>
+    <category id="Cat Pers">
+    <instruction>eval()</instruction>
+    <instruction>isFinite()</instruction>
+    <instruction>isNaN()</instruction>
+    <instruction>parseFloat()</instruction>
+    <instruction>parseInt()</instruction>
+    <instruction>decodeURI()</instruction>
+    <instruction>decodeURIComponent()</instruction>
+    <instruction>encodeURI()</instruction>
+    <instruction>encodeURIComponent()</instruction>
+    <instruction>escape() Deprecated</instruction>
+    <instruction>unescape()</instruction>
+  </category>
+ 
+</categories>

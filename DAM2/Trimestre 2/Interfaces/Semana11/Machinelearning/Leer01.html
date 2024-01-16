@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML</title>
+    <script>
+        window.onload = function(){
+            var contexto = document.getElementById("lienzo").getContext("2d");
+            let imagen = new Image();
+            imagen.src ="mano.jpg";
+            imagen.onload = function(){
+                contexto.drawImage(imagen,0,0)
+            }
+        }
+    </script>
+</head>
+<body>
+    <canvas width="512px" height="512px" id="lienzo"></canvas>   
+</body>
+</html>

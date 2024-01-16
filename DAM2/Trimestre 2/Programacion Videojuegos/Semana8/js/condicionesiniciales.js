@@ -7,7 +7,7 @@ var contextomapaprops = document.getElementById("lienzomapaprops").getContext("2
 var contextomaparecogibles = document.getElementById("lienzomaparecogibles").getContext("2d");
 var contextomapa = document.getElementById("lienzomapa").getContext("2d");
 var contextomapacolores = document.getElementById("lienzomapacolores").getContext("2d");
-//var contextomapaarquitectura = document.getElementById("lienzoarquitectura").getContext("2d");
+var contextomapaarquitectura = document.getElementById("lienzomapaarquitectura").getContext("2d");
 
 
 var contextopunto = document.getElementById("lienzopunto").getContext("2d");
@@ -60,8 +60,8 @@ mapaprops.src = "img/mapas2/mapa1props.png"
 var maparecogibles = new Image();
 maparecogibles.src = "img/mapas2/mapa1recogibles.png"
 
-//var mapaarquitectura = new Image();
-//mapaarquitectura.src = "img/mapas2/mapacasas.png"
+var mapaarquitectura = new Image();
+mapaarquitectura.src = "img/mapas2/mapa1arquitectura.png"
 
 var bloque9 = new Image();
 bloque9.src = "img/terreno/terreno9.png"
@@ -76,8 +76,11 @@ var bloquejardin = new Image();bloquejardin.src = "img/terreno/jardin.png"
 var bloquepavimentocasa = new Image();bloquepavimentocasa.src = "img/terreno/pavimentocasa.png"
 var bloquevallajardin = new Image();bloquevallajardin.src = "img/terreno/vallajardin.png"
 
-//var bloquearquitectura1 = new Image();bloquearquitectura1.src = "img/mapas2/simple1.png"
-//var bloquearquitectura2 = new Image();bloquearquitectura2.src = "img/mapas2/simple2.png"
+var sur = new Image();sur.src = "img/mapas2/sur.png"
+var oeste = new Image();oeste.src = "img/mapas2/oeste.png"
+
+var bloquearquitectura1 = new Image();bloquearquitectura1.src = "img/mapas2/simple1.png"
+var bloquearquitectura2 = new Image();bloquearquitectura2.src = "img/mapas2/simple2.png"
 
 
 
@@ -95,7 +98,7 @@ var imgRecogible3 = new Image();
 imgRecogible3.src = "img/mapas2/pocion3.png"
 
 var imgProp1 = new Image();
-imgProp1.src = "img/mapas2/prop1.png"
+imgProp1.src = "img/mapas2/simple2.png"
 
 var imgAccion = new Image();
 imgAccion.src = "img/movimiento.png"

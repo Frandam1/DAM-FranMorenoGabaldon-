@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 1. Quiero que la variable sea visible desde la tarea, la paso como datos
+        var edad = 45; 
+        var nombre = "Fran";
+        var json = {edad:35, nombre:"Moreno", aficion: "programar"}
+
+
+        var numeroDeNucleos = navigator.hardwareConcurrency;
+        console.log("Este ordenador tiene "+numeroDeNucleos+" nucleos");
+
+        var trabajador = new Array();
+        for(var i = 0; i<numeroDeNucleos;i++){
+            trabajador[i] = new Worker("tarea5.js");
+            trabajador[i].postMessage(json);// 2. lo pasamos como datos al js
+            trabajador[i].onmessage = function(datos){
+                console.log(datos.data)
+            }
+
+        }
+    </script>
+</body>
+</html>

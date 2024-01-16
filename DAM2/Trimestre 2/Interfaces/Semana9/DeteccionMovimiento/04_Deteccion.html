@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteccion movimiento</title>
+    <style>
+        html,body{background: black;}
+        video{display: none;}
+        canvas{position: absolute;top: 0px;left: 0px;}
+        #lienzo2{opacity: 0.5;}
+    </style>
+</head>
+
+<body>
+    <canvas id="lienzo" width="640px" height="480px"></canvas>
+    <canvas id="lienzo2" width="640px" height="480px"></canvas>
+    <video id="video" autoplay></video>
+    <script>
+        const video = document.getElementById("video");
+        const lienzo = document.getElementById("lienzo");
+        const lienzo2 = document.getElementById("lienzo2");
+        const contexto = lienzo.getContext("2d");
+        const contexto2 = lienzo2.getContext("2d");
+        contexto2.fillStyle = "rgba(255,255,255,0.1)";
+        const paso = 16;
+        var pixelesviejos = [];
+        var pixelesnuevos = [];
+        var contador = 0;
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (flujo) {
+                video.srcObject = flujo;
+            })
+            .catch(function (error) {
+                console.log("Error: " + error)
+            })
+
+        function videoAlienzo() {
+
+            contexto2.fillRect(0,0,640,480)
+
+            //contexto2.clearRect(0,0,640,480)
+
+            contexto.drawImage(video, 0, 0, lienzo.width, lienzo.height)
+            pixelesviejos = pixelesnuevos;
+            pixelesnuevos = [];
+            for (let x = 0; x < 640; x += paso) {
+                for (let y = 0; y < 480; y += paso) {
+                    let pixel = contexto.getImageData(x, y, 1, 1);
+                    let datos = []
+                    pixelesnuevos.push({
+                        data:pixel.data,
+                        x:x,
+                        y:y
+                    })
+                }
+            }
+            if(contador>0){
+
+                for(let i = 0;i<pixelesnuevos.length;i++){
+                    let rojonuevo = pixelesnuevos[i].data[0]
+                    let rojoviejo = pixelesviejos[i].data[0]
+
+                    let diferencia = Math.abs(rojonuevo-rojoviejo)
+
+                    if(diferencia > 25){
+                        //console.log("EY")
+
+                        contexto.strokeRect(pixelesnuevos[i].x,pixelesnuevos[i].y,paso,paso)
+                    }
+                }
+            }
+            requestAnimationFrame(videoAlienzo)
+            contador++;
+        }
+        video.addEventListener('play', function () {
+            videoAlienzo()
+        })
+    </script>
+
+</body>
+
+</html>

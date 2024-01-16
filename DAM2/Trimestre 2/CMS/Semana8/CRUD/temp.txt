@@ -1,0 +1,7 @@
+ 	{"titulo": "Nombre del usuario","descripcion":"Nombre usuario", 
+    "placeholder":"Un nombre",
+    "mascara":"algo",
+    "min":"1","deshabilitado":"false",
+    "visible":"true",
+    "icono":"fas fa-sort-numeric-up",
+    "tipodato":"text"} 

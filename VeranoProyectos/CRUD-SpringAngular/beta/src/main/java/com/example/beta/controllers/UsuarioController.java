@@ -2,7 +2,7 @@ package com.example.beta.controllers;
 
 import com.example.beta.Usuario;
 import com.example.beta.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public class UsuarioController {
 
     private final UsuarioRepository usuarioRepository;
 
-    @Autowired
+    //@Autowired
     public UsuarioController(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }

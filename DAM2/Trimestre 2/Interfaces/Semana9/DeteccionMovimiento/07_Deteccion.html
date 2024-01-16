@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteccion movimiento</title>
+    <style>
+        html,
+        body {
+            background: black;
+        }
+
+        video {
+            display: none;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        #lienzo2 {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="lienzo" width="640px" height="480px"></canvas>
+    <canvas id="lienzo2" width="640px" height="480px"></canvas>
+    <video id="video" autoplay></video>
+    <script>
+
+        // Variables Iniciales
+        const video = document.getElementById("video");
+        const lienzo = document.getElementById("lienzo");
+        const lienzo2 = document.getElementById("lienzo2");
+        const contexto = lienzo.getContext("2d");
+        const contexto2 = lienzo2.getContext("2d");
+        contexto2.fillStyle = "rgba(255,255,255,0.1)";
+        //Tamaño del cuadro
+        const paso = 48;
+        //Contendor para los pixeles del fotograma anterior
+        var pixelesviejos = [];
+        //Contendor para los pixeles del ultimo contenedor
+        var pixelesnuevos = [];
+        var contador = 0;
+        var cuadrosx = []
+        var cuadrosy = []
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (flujo) {
+                video.srcObject = flujo;
+            })
+            .catch(function (error) {
+                console.log("Error: " + error)
+            })
+
+        function videoAlienzo() {
+
+            cuadrosx = []
+            cuadrosy = []
+            //Capa semitransparendte
+            contexto2.fillRect(0, 0, 640, 480)
+
+            //contexto2.clearRect(0,0,640,480)
+            //En el canvas pego el video
+            contexto.drawImage(video, 0, 0, lienzo.width, lienzo.height)
+            //A los pixeles viejos les paso la informacio de los nuevos
+            pixelesviejos = pixelesnuevos;
+            //Reinicio la informacion
+            pixelesnuevos = [];
+
+            //Repasamos la imagen
+            for (let x = 0; x < 640; x += paso) {
+                for (let y = 0; y < 480; y += paso) {
+                    let pixel = contexto.getImageData(x, y, 1, 1);
+                    let datos = []
+                    //En los pixless nuevos pongo la informacion
+                    pixelesnuevos.push({
+                        data: pixel.data,
+                        x: x,
+                        y: y
+                    })
+                }
+            }
+
+            //Si estoy en la segunda iteracion
+            if (contador > 0) {
+
+                for (let i = 0; i < pixelesnuevos.length; i++) {
+                    //Repaso el array y comparo
+                    let rojonuevo = pixelesnuevos[i].data[0]
+                    let rojoviejo = pixelesviejos[i].data[0]
+                    let verdenuevo = pixelesnuevos[i].data[1]
+                    let verdeviejo = pixelesviejos[i].data[1]
+                    let azulnuevo = pixelesnuevos[i].data[2]
+                    let azulviejo = pixelesviejos[i].data[2]
+
+                    let diferenciarojo = Math.abs(rojonuevo - rojoviejo)
+                    let diferenciaverde = Math.abs(verdenuevo - verdeviejo)
+                    let diferenciaazul = Math.abs(azulnuevo - azulviejo)
+
+                    let promedio = (diferenciarojo + diferenciaazul + diferenciaverde) / 3;
+
+                    //Si la diferencfia es grande, deducimos que hay movimiento
+                    if (promedio > 25) {
+                        //console.log("EY")
+
+                        contexto.strokeRect(pixelesnuevos[i].x,
+                            pixelesnuevos[i].y,
+                            paso,
+                            paso)
+
+                        if (typeof (cuadrosx[pixelesnuevos[i].x]) == 'undefined') {
+                            cuadrosx[pixelesnuevos[i].x] = 1
+                        } else {
+                            cuadrosx[pixelesnuevos[i].x]++
+                        }
+                        if (typeof (cuadrosy[pixelesnuevos[i].y]) == 'undefined') {
+                            cuadrosy[pixelesnuevos[i].y] = 1
+                        } else {
+                            cuadrosy[pixelesnuevos[i].y]++
+                        }
+
+                    }
+
+                }
+            }
+
+            let maxx = 0
+            let indicex = 0
+            cuadrosx.forEach(function (number, index) {
+                if (number > maxx) {
+                    maxx = number;
+                    indicex = index
+                }
+            })
+
+
+
+            let maxy = 0
+            let indicey = 0
+            cuadrosy.forEach(function (number, index) {
+                if (number > maxy) {
+                    maxy = number;
+                    indicey = index
+                }
+            })
+
+            contexto2.beginPath();
+            contexto2.moveTo(maxx*paso,0)
+            contexto2.lineTo(maxx*paso,480)
+            contexto2.stroke()
+
+            contexto2.beginPath();
+            contexto2.moveTo(0,maxy*paso)
+            contexto2.lineTo(640,maxy*paso)
+            contexto2.stroke()
+            
+            //console.log(cuadrosx)
+            requestAnimationFrame(videoAlienzo)
+
+            contexto2.beginPath()
+            contexto2.arc(maxx*paso,maxy*paso,30,0,Math.PI*2,true)
+            contexto2.stroke()
+
+            contador++;
+        }
+        video.addEventListener('play', function () {
+            videoAlienzo()
+        })
+    </script>
+
+</body>
+
+</html>
